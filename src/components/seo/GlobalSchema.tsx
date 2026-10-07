@@ -5,21 +5,20 @@ import { usePathname } from 'next/navigation';
 
 export default function GlobalSchema() {
   const pathname = usePathname();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bizdevelopment.in';
-  const currentUrl = `${siteUrl}${pathname === '/' ? '' : pathname}`;
+  const currentUrl = `https://bizdevelopment.in${pathname === '/' ? '' : pathname}`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': `${siteUrl}/#organization`,
+        '@id': 'https://bizdevelopment.in/#organization',
         name: 'Bizleap Development Services',
         legalName: 'BizLeap India Pvt. Ltd.',
-        url: siteUrl,
+        url: 'https://bizdevelopment.in',
         logo: {
           '@type': 'ImageObject',
-          url: `${siteUrl}/logo-dark.png`,
+          url: 'https://bizdevelopment.in/logo-dark.png',
           width: 200,
           height: 60,
         },
@@ -38,21 +37,21 @@ export default function GlobalSchema() {
       },
       {
         '@type': 'WebSite',
-        '@id': `${siteUrl}/#website`,
-        url: siteUrl,
+        '@id': 'https://bizdevelopment.in/#website',
+        url: 'https://bizdevelopment.in',
         name: 'Bizleap Development Services',
         description:
           'Bizleap is a premier digital marketing and website development agency in Nagpur. We engineer high-performance web apps, mobile apps, and scalable digital solutions.',
         publisher: {
-          '@id': `${siteUrl}/#organization`,
+          '@id': 'https://bizdevelopment.in/#organization',
         },
       },
       {
         '@type': 'ProfessionalService',
-        '@id': `${siteUrl}/#localbusiness`,
+        '@id': 'https://bizdevelopment.in/#localbusiness',
         name: 'Bizleap Development Services',
-        image: `${siteUrl}/images/bizleap_laptop_mockup.jpg`,
-        url: siteUrl,
+        image: 'https://bizdevelopment.in/images/bizleap_laptop_mockup.jpg',
+        url: 'https://bizdevelopment.in',
         telephone: '+91-70970-95152',
         email: 'bizleapinc@gmail.com',
         priceRange: '$$',
@@ -114,24 +113,24 @@ export default function GlobalSchema() {
       // Individual WebPages included in graph
       {
         '@type': 'WebPage',
-        '@id': `${siteUrl}/#webpage`,
-        url: siteUrl,
+        '@id': 'https://bizdevelopment.in/#webpage',
+        url: 'https://bizdevelopment.in',
         name: 'Home - Bizleap Development Services',
-        isPartOf: { '@id': `${siteUrl}/#website` }
+        isPartOf: { '@id': 'https://bizdevelopment.in/#website' }
       },
       {
         '@type': 'WebPage',
-        '@id': `${siteUrl}/services#webpage`,
-        url: `${siteUrl}/services`,
+        '@id': 'https://bizdevelopment.in/services#webpage',
+        url: 'https://bizdevelopment.in/services',
         name: 'Services - Bizleap Development Services',
-        isPartOf: { '@id': `${siteUrl}/#website` }
+        isPartOf: { '@id': 'https://bizdevelopment.in/#website' }
       },
       {
         '@type': 'WebPage',
-        '@id': `${siteUrl}/work#webpage`,
-        url: `${siteUrl}/work`,
+        '@id': 'https://bizdevelopment.in/work#webpage',
+        url: 'https://bizdevelopment.in/work',
         name: 'Our Work - Bizleap Development Services',
-        isPartOf: { '@id': `${siteUrl}/#website` }
+        isPartOf: { '@id': 'https://bizdevelopment.in/#website' }
       }
     ],
   };
