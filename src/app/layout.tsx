@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import SmoothScroll from '@/components/layout/SmoothScroll';
 import DynamicTitle from '@/components/ui/DynamicTitle';
+import GlobalSchema from '@/components/seo/GlobalSchema';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.bizdevelopment.in';
 
@@ -92,87 +93,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': `${siteUrl}/#organization`,
-        name: 'Bizleap Development Services',
-        legalName: 'BizLeap India Pvt. Ltd.',
-        url: siteUrl,
-        logo: {
-          '@type': 'ImageObject',
-          url: `${siteUrl}/logo-dark.png`,
-          width: 200,
-          height: 60,
-        },
-        sameAs: [
-          'https://www.instagram.com/bizleap.in/reels/',
-          'https://www.linkedin.com/company/bizleapinc',
-        ],
-        contactPoint: {
-          '@type': 'ContactPoint',
-          telephone: '+91-70970-95152',
-          contactType: 'customer support',
-          email: 'bizleapinc@gmail.com',
-          areaServed: ['IN', 'Nagpur', 'Pune', 'Mumbai', 'Maharashtra'],
-          availableLanguage: ['English', 'Hindi', 'Marathi'],
-        },
-      },
-      {
-        '@type': 'WebSite',
-        '@id': `${siteUrl}/#website`,
-        url: siteUrl,
-        name: 'Bizleap Development Services',
-        description:
-          'Bizleap is a premier digital marketing and website development agency in Nagpur. We engineer high-performance web apps, mobile apps, and scalable digital solutions.',
-        publisher: {
-          '@id': `${siteUrl}/#organization`,
-        },
-      },
-      {
-        '@type': 'ProfessionalService',
-        '@id': `${siteUrl}/#localbusiness`,
-        name: 'Bizleap Development Services',
-        image: `${siteUrl}/images/bizleap_laptop_mockup.jpg`,
-        url: siteUrl,
-        telephone: '+91-70970-95152',
-        email: 'bizleapinc@gmail.com',
-        priceRange: '$$',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: '2, Wardha Rd, Near Sai Mandir, Sawarkar Nagar, Gajanan Nagar',
-          addressLocality: 'Nagpur',
-          addressRegion: 'Maharashtra',
-          postalCode: '440015',
-          addressCountry: 'IN',
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: '21.107778',
-          longitude: '79.055833',
-        },
-        openingHoursSpecification: [
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-            opens: '09:00',
-            closes: '21:00',
-          },
-        ],
-        areaServed: ['Nagpur', 'Pune', 'Mumbai', 'Maharashtra', 'India'],
-      },
-    ],
-  };
-
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <GlobalSchema />
       </head>
       <body suppressHydrationWarning>
         <DynamicTitle />
