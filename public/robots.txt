@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /services
+Allow: /work
+# The global schema, including FAQs, is injected into the HTML of these allowed pages.
 
 Sitemap: https://bizdevelopment.in/sitemap.xml
