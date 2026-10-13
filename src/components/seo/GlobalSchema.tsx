@@ -1,72 +1,83 @@
-'use client';
-
 import React from 'react';
-import { usePathname } from 'next/navigation';
+import {
+  SITE_URL,
+  SITE_NAME,
+  LEGAL_NAME,
+  BRAND_NAME,
+  CONTACT_PHONE_CLEAN,
+  CONTACT_EMAIL,
+  ADDRESS,
+  GEO,
+  SOCIAL_LINKS,
+} from '@/config/site';
 
 export default function GlobalSchema() {
-  const pathname = usePathname();
-  const currentUrl = `https://bizdevelopment.in${pathname === '/' ? '' : pathname}`;
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://bizdevelopment.in/#organization',
-        name: 'Bizleap Development Services',
-        legalName: 'BizLeap India Pvt. Ltd.',
-        url: 'https://bizdevelopment.in',
+        '@id': `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+        legalName: LEGAL_NAME,
+        url: SITE_URL,
         logo: {
           '@type': 'ImageObject',
-          url: 'https://bizdevelopment.in/logo-dark.png',
+          url: `${SITE_URL}/logo-dark.png`,
           width: 200,
           height: 60,
         },
+        parentOrganization: {
+          '@type': 'Organization',
+          name: 'Bizleap Digital Marketing',
+          url: SOCIAL_LINKS.marketingPartner,
+        },
         sameAs: [
-          'https://www.instagram.com/bizleap.in/reels/',
-          'https://www.linkedin.com/company/bizleapinc',
+          SOCIAL_LINKS.marketingPartner,
+          SOCIAL_LINKS.instagram,
+          SOCIAL_LINKS.linkedin,
         ],
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+91-70970-95152',
+          telephone: CONTACT_PHONE_CLEAN,
           contactType: 'customer support',
-          email: 'bizleapinc@gmail.com',
-          areaServed: ['IN', 'Nagpur', 'Pune', 'Mumbai', 'Maharashtra'],
+          email: CONTACT_EMAIL,
+          areaServed: ['IN', 'Nagpur', 'Maharashtra'],
           availableLanguage: ['English', 'Hindi', 'Marathi'],
         },
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://bizdevelopment.in/#website',
-        url: 'https://bizdevelopment.in',
-        name: 'Bizleap Development Services',
+        '@id': `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: BRAND_NAME,
         description:
-          'Bizleap is a premier digital marketing and website development agency in Nagpur. We engineer high-performance web apps, mobile apps, and scalable digital solutions.',
+          'Bizleap Development is a premier website, mobile app, and e-commerce development company in Nagpur. Scalable engineering for growth.',
         publisher: {
-          '@id': 'https://bizdevelopment.in/#organization',
+          '@id': `${SITE_URL}/#organization`,
         },
       },
       {
         '@type': 'ProfessionalService',
-        '@id': 'https://bizdevelopment.in/#localbusiness',
-        name: 'Bizleap Development Services',
-        image: 'https://bizdevelopment.in/images/bizleap_laptop_mockup.jpg',
-        url: 'https://bizdevelopment.in',
-        telephone: '+91-70970-95152',
-        email: 'bizleapinc@gmail.com',
-        priceRange: '$$',
+        '@id': `${SITE_URL}/#professionalservice`,
+        name: SITE_NAME,
+        image: `${SITE_URL}/images/bizleap_laptop_mockup.jpg`,
+        url: SITE_URL,
+        telephone: CONTACT_PHONE_CLEAN,
+        email: CONTACT_EMAIL,
+        priceRange: '₹₹',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '2, Wardha Rd, Near Sai Mandir, Sawarkar Nagar, Gajanan Nagar',
-          addressLocality: 'Nagpur',
-          addressRegion: 'Maharashtra',
-          postalCode: '440015',
-          addressCountry: 'IN',
+          streetAddress: ADDRESS.streetAddress,
+          addressLocality: ADDRESS.addressLocality,
+          addressRegion: ADDRESS.addressRegion,
+          postalCode: ADDRESS.postalCode,
+          addressCountry: ADDRESS.addressCountry,
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: '21.107778',
-          longitude: '79.055833',
+          latitude: GEO.latitude,
+          longitude: GEO.longitude,
         },
         openingHoursSpecification: [
           {
@@ -76,62 +87,17 @@ export default function GlobalSchema() {
             closes: '21:00',
           },
         ],
-        areaServed: ['Nagpur', 'Pune', 'Mumbai', 'Maharashtra', 'India'],
-      },
-      // FAQ Page Schema
-      {
-        '@type': 'FAQPage',
-        '@id': `${currentUrl}#faq`,
-        url: currentUrl,
-        mainEntity: [
+        areaServed: [
           {
-            '@type': 'Question',
-            name: 'What services does Bizleap provide?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Bizleap provides a range of digital services including Website Development, App Development, Digital Marketing, SEO, and UI/UX Design.',
-            }
+            '@type': 'City',
+            name: 'Nagpur',
           },
           {
-            '@type': 'Question',
-            name: 'Where is Bizleap located?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'We are located in Nagpur, Maharashtra at 2, Wardha Rd, Near Sai Mandir, Sawarkar Nagar, Gajanan Nagar, 440015.',
-            }
+            '@type': 'Country',
+            name: 'India',
           },
-          {
-            '@type': 'Question',
-            name: 'How can I contact Bizleap for a project?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'You can reach out to us at bizleapinc@gmail.com or call us at +91-70970-95152.',
-            }
-          }
-        ]
+        ],
       },
-      // Individual WebPages included in graph
-      {
-        '@type': 'WebPage',
-        '@id': 'https://bizdevelopment.in/#webpage',
-        url: 'https://bizdevelopment.in',
-        name: 'Home - Bizleap Development Services',
-        isPartOf: { '@id': 'https://bizdevelopment.in/#website' }
-      },
-      {
-        '@type': 'WebPage',
-        '@id': 'https://bizdevelopment.in/services#webpage',
-        url: 'https://bizdevelopment.in/services',
-        name: 'Services - Bizleap Development Services',
-        isPartOf: { '@id': 'https://bizdevelopment.in/#website' }
-      },
-      {
-        '@type': 'WebPage',
-        '@id': 'https://bizdevelopment.in/work#webpage',
-        url: 'https://bizdevelopment.in/work',
-        name: 'Our Work - Bizleap Development Services',
-        isPartOf: { '@id': 'https://bizdevelopment.in/#website' }
-      }
     ],
   };
 
