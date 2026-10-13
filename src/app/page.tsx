@@ -11,6 +11,7 @@ import MagneticWrapper from '@/components/ui/MagneticWrapper';
 import AnimatedMarquee from '@/components/ui/AnimatedMarquee';
 import FAQSection from '@/components/ui/FAQSection';
 import { PORTFOLIO_PROJECTS, PORTFOLIO_CATEGORIES } from '@/data/portfolio';
+import { BIZLEAP_CONTACT_URL } from '@/config/site';
 import styles from './page.module.css';
 
 interface MarqueeLogo {
@@ -204,9 +205,9 @@ export default function Home() {
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 <MagneticWrapper>
-                  <Link href="/contact" className={styles.clayBtnPrimary}>
+                  <a href={BIZLEAP_CONTACT_URL} className={styles.clayBtnPrimary}>
                     Start a Project <ArrowRight size={18} />
-                  </Link>
+                  </a>
                 </MagneticWrapper>
                 <MagneticWrapper>
                   <Link href="/work" className={styles.clayBtnSecondary}>
@@ -287,7 +288,7 @@ export default function Home() {
               </ul>
               <div className={styles.serviceActions}>
                 <Link href="/services/website-development-nagpur" className={styles.btnPrimary}>Website Development in Nagpur <ArrowUpRight className={styles.btnIcon} /></Link>
-                <Link href="/contact" className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></Link>
+                <a href={BIZLEAP_CONTACT_URL} className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></a>
               </div>
             </div>
             <div className={styles.serviceVisual}>
@@ -321,7 +322,7 @@ export default function Home() {
               </ul>
               <div className={styles.serviceActions}>
                 <Link href="/services/mobile-app-development-nagpur" className={styles.btnPrimary}>Mobile App Development in Nagpur <ArrowRight className={styles.btnIcon} /></Link>
-                <Link href="/contact" className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></Link>
+                <a href={BIZLEAP_CONTACT_URL} className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></a>
               </div>
             </div>
             <div className={styles.serviceVisualMobileFirst}>
@@ -351,7 +352,7 @@ export default function Home() {
               </ul>
               <div className={styles.serviceActions}>
                 <Link href="/services/ecommerce-website-development-nagpur" className={styles.btnPrimary}>E-Commerce Development in Nagpur <ArrowRight className={styles.btnIcon} /></Link>
-                <Link href="/contact" className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></Link>
+                <a href={BIZLEAP_CONTACT_URL} className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></a>
               </div>
             </div>
             <div className={styles.serviceVisual}>
@@ -606,9 +607,9 @@ export default function Home() {
               Have something <br /> worth building?
             </h2>
             <MagneticWrapper>
-              <Link href="/contact" className={styles.ctaButton}>
+              <a href={BIZLEAP_CONTACT_URL} className={styles.ctaButton}>
                 START A PROJECT <ArrowUpRight size={18} strokeWidth={2.5} />
-              </Link>
+              </a>
             </MagneticWrapper>
           </div>
         </motion.section>

@@ -29,3 +29,5 @@ export const SOCIAL_LINKS = {
   instagram: 'https://www.instagram.com/bizleap.in/reels/',
   linkedin: 'https://www.linkedin.com/company/bizleapinc',
 };
+
+export const BIZLEAP_CONTACT_URL = 'https://www.bizleap.in/contact';

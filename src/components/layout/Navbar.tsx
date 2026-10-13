@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Menu, X, Phone } from 'lucide-react';
-import { CONTACT_PHONE, CONTACT_PHONE_CLEAN } from '@/config/site';
+import { CONTACT_PHONE, CONTACT_PHONE_CLEAN, BIZLEAP_CONTACT_URL } from '@/config/site';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -35,9 +35,9 @@ export default function Navbar() {
           >
             <Phone size={14} /> Let&apos;s Talk
           </a>
-          <Link href="/contact" className={styles.primaryButton}>
+          <a href={BIZLEAP_CONTACT_URL} className={styles.primaryButton}>
             Start a Project <ArrowRight size={16} />
-          </Link>
+          </a>
           
           <button 
             className={styles.hamburgerBtn} 
@@ -59,13 +59,13 @@ export default function Navbar() {
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           
           <div className={styles.mobileCtaGroup}>
-            <Link
-              href="/contact"
+            <a
+              href={BIZLEAP_CONTACT_URL}
               className={styles.mobilePrimaryButton}
               onClick={() => setMobileMenuOpen(false)}
             >
               Start a Project <ArrowRight size={16} />
-            </Link>
+            </a>
             <a
               href={`tel:${CONTACT_PHONE_CLEAN}`}
               className={styles.mobileSecondaryButton}
