@@ -287,7 +287,7 @@ export default function Home() {
                 <li><Cloud className={styles.tagIcon} /> Cloud</li>
               </ul>
               <div className={styles.serviceActions}>
-                <Link href="/services/website-development-nagpur" className={styles.btnPrimary}>Website Development in Nagpur <ArrowUpRight className={styles.btnIcon} /></Link>
+                <Link href="/services/website-development-nagpur" className={styles.btnPrimary}>Website Development <ArrowUpRight className={styles.btnIcon} /></Link>
                 <a href={BIZLEAP_CONTACT_URL} className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></a>
               </div>
             </div>
@@ -321,7 +321,7 @@ export default function Home() {
                 <li><BarChart3 className={styles.tagIcon} /> Analytics</li>
               </ul>
               <div className={styles.serviceActions}>
-                <Link href="/services/mobile-app-development-nagpur" className={styles.btnPrimary}>Mobile App Development in Nagpur <ArrowRight className={styles.btnIcon} /></Link>
+                <Link href="/services/mobile-app-development-nagpur" className={styles.btnPrimary}>App Development <ArrowRight className={styles.btnIcon} /></Link>
                 <a href={BIZLEAP_CONTACT_URL} className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></a>
               </div>
             </div>
@@ -351,7 +351,7 @@ export default function Home() {
                 <li><BarChart3 className={styles.tagIcon} /> Analytics</li>
               </ul>
               <div className={styles.serviceActions}>
-                <Link href="/services/ecommerce-website-development-nagpur" className={styles.btnPrimary}>E-Commerce Development in Nagpur <ArrowRight className={styles.btnIcon} /></Link>
+                <Link href="/services/ecommerce-website-development-nagpur" className={styles.btnPrimary}>E-Commerce Development <ArrowRight className={styles.btnIcon} /></Link>
                 <a href={BIZLEAP_CONTACT_URL} className={styles.btnSecondary}>Start a Project <ArrowRight className={styles.btnIcon} /></a>
               </div>
             </div>
