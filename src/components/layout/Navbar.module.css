@@ -99,7 +99,7 @@
     border-radius: 100px;
     background-color: #f4f4f5; 
     color: var(--text-primary);
-    font-family: var(--font-body);
+    font-family: var(--font-button, 'Poppins', sans-serif);
     font-weight: 600;
     font-size: 0.875rem;
     text-decoration: none;
@@ -116,7 +116,7 @@
   border-radius: 100px;
   background-color: #e5b82e; 
   color: #ffffff;
-  font-family: var(--font-body);
+  font-family: var(--font-button, 'Poppins', sans-serif);
   font-weight: 600;
   font-size: 0.875rem;
   text-decoration: none;
@@ -192,7 +192,7 @@
   border-radius: 10px;
   background-color: #e5b82e !important;
   color: #ffffff !important;
-  font-family: var(--font-body) !important;
+  font-family: var(--font-button, 'Poppins', sans-serif) !important;
   font-weight: 600 !important;
   font-size: 1rem !important;
   text-decoration: none;
@@ -209,7 +209,7 @@
   border-radius: 10px;
   background-color: #f4f4f5 !important;
   color: #111111 !important;
-  font-family: var(--font-body) !important;
+  font-family: var(--font-button, 'Poppins', sans-serif) !important;
   font-weight: 600 !important;
   font-size: 1rem !important;
   text-decoration: none;

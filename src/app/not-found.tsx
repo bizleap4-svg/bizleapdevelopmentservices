@@ -67,7 +67,7 @@ export default function NotFound() {
 
           <Link 
             href="/" 
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'var(--accent-yellow, #E5B82E)', color: '#000', padding: '0.85rem 1.6rem', borderRadius: '10px', fontWeight: 700, textDecoration: 'none' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'var(--accent-yellow, #E5B82E)', color: '#000', padding: '0.85rem 1.6rem', borderRadius: '10px', fontWeight: 700, fontFamily: "var(--font-button, 'Poppins', sans-serif)", textDecoration: 'none' }}
           >
             <ArrowLeft size={18} /> Return to Homepage
           </Link>
