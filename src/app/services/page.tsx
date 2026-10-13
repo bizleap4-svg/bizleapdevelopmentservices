@@ -7,7 +7,7 @@ import { ArrowRight, Code2, Smartphone, Layout, Server, Zap, Database, Cloud, Ba
 import Image from 'next/image';
 import Link from 'next/link';
 import FAQSection from '@/components/ui/FAQSection';
-import { SITE_URL, SITE_NAME, BRAND_NAME } from '@/config/site';
+import { SITE_URL, SITE_NAME, BRAND_NAME, BIZLEAP_CONTACT_URL } from '@/config/site';
 
 export const metadata: Metadata = {
   title: {
@@ -88,6 +88,8 @@ const services = [
     desc: 'From iOS to Android, we engineer fluid, high-performance mobile applications that users love. We focus on seamless animations, battery efficiency, offline caching, and intuitive navigation.',
     mainIcon: Smartphone,
     serviceUrl: '/services/mobile-app-development-nagpur',
+    secondaryUrl: BIZLEAP_CONTACT_URL,
+    secondaryLabel: 'Start a Project',
     tags: [
       { name: 'Native Feel', icon: Smartphone },
       { name: 'High Speed', icon: Zap },
@@ -101,6 +103,8 @@ const services = [
     desc: "We design interfaces that don't just look stunning—they convert. By combining psychological design principles with modern aesthetics, we create digital products that feel effortless and memorable.",
     mainIcon: Layout,
     serviceUrl: '/services/ui-ux-design-nagpur',
+    secondaryUrl: BIZLEAP_CONTACT_URL,
+    secondaryLabel: 'Start a Project',
     tags: [
       { name: 'Wireframing', icon: Layout },
       { name: 'Brand Identity', icon: Fingerprint },
@@ -114,6 +118,8 @@ const services = [
     desc: 'We architect robust e-commerce platforms that process high-volume transactions with lightning-fast checkouts, custom payment gateways, and advanced inventory management systems.',
     mainIcon: ShoppingCart,
     serviceUrl: '/services/ecommerce-website-development-nagpur',
+    secondaryUrl: BIZLEAP_CONTACT_URL,
+    secondaryLabel: 'Start a Project',
     tags: [
       { name: 'Scalability', icon: Server },
       { name: 'Security', icon: ShieldCheck },
@@ -255,42 +261,29 @@ export default function ServicesPage() {
                   ))}
                 </div>
 
-                <div style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>
+                <div className={styles.bentoActions}>
                   <Link 
                     href={s.serviceUrl} 
-                    style={{ 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
-                      gap: '0.35rem', 
-                      background: '#111', 
-                      color: '#fff', 
-                      padding: '0.6rem 1.1rem', 
-                      borderRadius: '8px', 
-                      fontSize: '0.9rem', 
-                      fontWeight: 600, 
-                      textDecoration: 'none' 
-                    }}
+                    className={styles.bentoBtnPrimary}
                   >
                     Explore Service <ArrowRight size={15} />
                   </Link>
                   {s.secondaryUrl && (
-                    <Link 
-                      href={s.secondaryUrl} 
-                      style={{ 
-                        display: 'inline-flex', 
-                        alignItems: 'center', 
-                        gap: '0.35rem', 
-                        border: '1px solid #ddd', 
-                        color: '#222', 
-                        padding: '0.6rem 1.1rem', 
-                        borderRadius: '8px', 
-                        fontSize: '0.9rem', 
-                        fontWeight: 500, 
-                        textDecoration: 'none' 
-                      }}
-                    >
-                      {s.secondaryLabel} <ArrowRight size={15} />
-                    </Link>
+                    s.secondaryUrl.startsWith('http') ? (
+                      <a 
+                        href={s.secondaryUrl} 
+                        className={styles.bentoBtnSecondary}
+                      >
+                        {s.secondaryLabel} <ArrowRight size={15} />
+                      </a>
+                    ) : (
+                      <Link 
+                        href={s.secondaryUrl} 
+                        className={styles.bentoBtnSecondary}
+                      >
+                        {s.secondaryLabel} <ArrowRight size={15} />
+                      </Link>
+                    )
                   )}
                 </div>
               </div>
