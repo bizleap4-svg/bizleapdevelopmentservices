@@ -53,6 +53,10 @@ To avoid fabricating business facts, all 17 portfolio case studies at `/work/[sl
 
 ---
 
-## 5. Contact Form Backend Integration
-- The `/contact` form is equipped with a server action (`submitContactForm`) validating all inputs (name, email, phone, service, message) and simulating success.
-- **Owner Action**: Connect the form handler to the preferred CRM, SendGrid/Resend API, or company email webhook.
+## 5. Contact Form Email Delivery Integration (`bizleapinc@gmail.com`)
+- The `/contact` form executes server action `submitContactForm` with `nodemailer` configured to deliver lead notifications directly to `bizleapinc@gmail.com`.
+- **Owner Action to Activate Real-Time In-Box Delivery**:
+  1. Go to Google Account Security for `bizleapinc@gmail.com`: `https://myaccount.google.com/apppasswords`
+  2. Create a new App Password named "Bizleap Website".
+  3. Copy the 16-character code and set it as `GMAIL_APP_PASSWORD` in `.env.local` (and in Vercel Project Settings > Environment Variables).
+  4. Once added, every client submission is automatically delivered to `bizleapinc@gmail.com` with formatted client details, direct mailto reply link, and phone call link.

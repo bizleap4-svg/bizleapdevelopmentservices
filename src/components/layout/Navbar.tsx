@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X, Phone } from 'lucide-react';
+import { CONTACT_PHONE, CONTACT_PHONE_CLEAN } from '@/config/site';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -27,8 +28,12 @@ export default function Navbar() {
         </div>
 
         <div className={styles.ctaGroup}>
-          <a href="tel:+917097095152" className={styles.secondaryButton}>
-            Let's Talk
+          <a
+            href={`tel:${CONTACT_PHONE_CLEAN}`}
+            className={styles.secondaryButton}
+            aria-label={`Call Bizleap Development at ${CONTACT_PHONE}`}
+          >
+            <Phone size={14} /> Let&apos;s Talk
           </a>
           <Link href="/contact" className={styles.primaryButton}>
             Start a Project <ArrowRight size={16} />
@@ -52,6 +57,23 @@ export default function Navbar() {
           <Link href="/work" onClick={() => setMobileMenuOpen(false)}>Work</Link>
           <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+          
+          <div className={styles.mobileCtaGroup}>
+            <Link
+              href="/contact"
+              className={styles.mobilePrimaryButton}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Start a Project <ArrowRight size={16} />
+            </Link>
+            <a
+              href={`tel:${CONTACT_PHONE_CLEAN}`}
+              className={styles.mobileSecondaryButton}
+              aria-label={`Call ${CONTACT_PHONE}`}
+            >
+              <Phone size={16} /> Let&apos;s Talk ({CONTACT_PHONE})
+            </a>
+          </div>
         </div>
       )}
     </nav>
