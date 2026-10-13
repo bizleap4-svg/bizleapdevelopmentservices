@@ -100,7 +100,21 @@
   color: #000000;
 }
 
+/* CSS Grid Accordion: Retains full text in server-rendered DOM */
 .faqAnswerWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faqAnswerWrapperOpen {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faqAnswerInner {
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -136,4 +150,3 @@
     font-size: 0.98rem;
   }
 }
-

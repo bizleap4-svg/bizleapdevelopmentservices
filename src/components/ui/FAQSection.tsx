@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import styles from './FAQSection.module.css';
 
@@ -10,27 +9,31 @@ export type FAQ = {
   answer: string;
 };
 
-const defaultFaqs: FAQ[] = [
+export const defaultHomeFaqs: FAQ[] = [
   {
-    question: 'Which is the best digital marketing company in Nagpur?',
-    answer: 'Bizleap is widely recognized as one of the best digital marketing companies in Nagpur. We deliver ROI-driven digital strategies, high-performing Meta & Google Ad campaigns, advanced search engine optimization (SEO), and conversion-focused web development designed to accelerate business growth.'
+    question: 'How much does a website development project cost in Nagpur?',
+    answer: 'Website development costs in Nagpur typically range from ₹15,000 for standard business sites to ₹1,50,000+ for custom Next.js web applications and feature-rich e-commerce platforms. Final pricing depends on integrations, custom UI/UX design, database architecture, and performance requirements.',
   },
   {
-    question: 'Why choose Bizleap for digital marketing in Nagpur?',
-    answer: 'Bizleap combines technical engineering excellence with creative marketing mastery. When you partner with us, you get a dedicated team of marketing strategists, media buyers, and full-stack developers committed to measurable results, clear ROI, and transparent monthly performance reporting.'
+    question: 'Next.js vs WordPress: Which platform is better for our business?',
+    answer: 'Next.js offers superior page speed, enterprise-grade security, tailored workflows, and perfect Core Web Vitals, making it ideal for modern brands and scalable web applications. WordPress is suitable for basic content blogs, but Next.js delivers higher conversion rates, zero plugin bloat, and unmatched scalability.',
   },
   {
-    question: 'Is Bizleap a top digital marketing agency in Nagpur?',
-    answer: 'Yes. Bizleap is a top-rated digital agency in Nagpur trusted by leading regional, national, and international brands. We have built a proven track record of scaling revenue, capturing top Google rankings, and generating predictable lead generation pipelines for our clients.'
+    question: 'What is the typical timeline to build and launch a custom website?',
+    answer: 'A standard business website typically takes 2 to 3 weeks from initial wireframes to production deployment. Complex custom web applications, multi-vendor e-commerce portals, and enterprise platforms usually require 4 to 8 weeks, including thorough QA testing and mobile optimization.',
   },
   {
-    question: 'What services does Bizleap provide?',
-    answer: 'Bizleap provides complete end-to-end digital solutions including Custom Website & Web App Development, Search Engine Optimization (SEO), Performance Marketing (Meta Ads & Google Ads), Social Media Marketing & Brand Building, Custom E-Commerce Platforms, and Native Mobile App Development.'
+    question: 'Do you provide native and cross-platform mobile app development?',
+    answer: 'Yes, Bizleap Development engineers native and cross-platform mobile applications for both iOS and Android using modern frameworks like React Native and Flutter. We provide end-to-end services from UI/UX design and API engineering to App Store and Google Play deployment.',
   },
   {
-    question: 'Which company is best for social media marketing in Nagpur?',
-    answer: 'Bizleap stands out as the premier social media marketing company in Nagpur. We create high-engagement creative campaigns, strategic content calendars, reels production, and targeted paid advertising on Instagram, LinkedIn, Facebook, and YouTube that turn followers into paying customers.'
-  }
+    question: 'Can you redesign our existing website without losing our current SEO rankings?',
+    answer: 'Yes. We specialize in website redesigns and legacy modernization. We map out all existing URL structures, implement strict 301 redirects, preserve established metadata, and improve site speed and mobile usability to protect and enhance your search rankings.',
+  },
+  {
+    question: 'What website maintenance and ongoing support packages do you offer?',
+    answer: 'We provide comprehensive website maintenance plans covering continuous uptime monitoring, security patches, regular backups, Core Web Vitals optimization, database performance tuning, and on-demand feature updates to keep your application fast and secure.',
+  },
 ];
 
 interface FAQSectionProps {
@@ -38,17 +41,19 @@ interface FAQSectionProps {
   title?: React.ReactNode;
   subtitle?: string;
   id?: string;
+  renderSchema?: boolean;
 }
 
 export default function FAQSection({ 
-  faqs = defaultFaqs,
+  faqs = defaultHomeFaqs,
   title = (
     <>
       Frequently Asked <span className={styles.accentText}>Questions</span>
     </>
   ),
   subtitle,
-  id = 'faq'
+  id = 'faq',
+  renderSchema = true,
 }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -81,6 +86,8 @@ export default function FAQSection({
                   className={styles.faqQuestion}
                   onClick={() => toggleFaq(idx)}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${idx}`}
+                  id={`faq-btn-${idx}`}
                 >
                   <h3 className={styles.faqQuestionText}>{formattedQuestion}</h3>
                   <ChevronDown 
@@ -91,43 +98,43 @@ export default function FAQSection({
                     }} 
                   />
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div 
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                      className={styles.faqAnswerWrapper}
-                    >
-                      <p className={styles.faqAnswer}>{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* CSS Grid ensures answer is server-rendered in the initial HTML DOM */}
+                <div 
+                  id={`faq-answer-${idx}`}
+                  role="region"
+                  aria-labelledby={`faq-btn-${idx}`}
+                  className={`${styles.faqAnswerWrapper} ${isOpen ? styles.faqAnswerWrapperOpen : ''}`}
+                >
+                  <div className={styles.faqAnswerInner}>
+                    <p className={styles.faqAnswer}>{faq.answer}</p>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
       
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqs.map((f, idx) => ({
-              "@type": "Question",
-              "name": f.question.match(/^\d+\.\s/) ? f.question : `${idx + 1}. ${f.question}`,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": f.answer
-              }
-            }))
-          })
-        }}
-      />
+      {/* FAQ Schema: strictly rendered only where visible FAQ text exists */}
+      {renderSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              'mainEntity': faqs.map((f, idx) => ({
+                '@type': 'Question',
+                'name': f.question.match(/^\d+\.\s/) ? f.question : `${idx + 1}. ${f.question}`,
+                'acceptedAnswer': {
+                  '@type': 'Answer',
+                  'text': f.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
     </section>
   );
 }
