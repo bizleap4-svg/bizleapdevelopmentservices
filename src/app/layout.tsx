@@ -6,8 +6,8 @@ import GlobalSchema from '@/components/seo/GlobalSchema';
 import { SITE_URL, BRAND_NAME } from '@/config/site';
 
 export const viewport: Viewport = {
-  themeColor: '#0a0a0a',
-  colorScheme: 'dark',
+  themeColor: '#ffffff',
+  colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,
 };
