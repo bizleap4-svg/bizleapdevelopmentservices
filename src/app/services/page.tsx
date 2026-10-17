@@ -7,7 +7,7 @@ import { ArrowRight, Code2, Smartphone, Layout, Server, Zap, Database, Cloud, Ba
 import Image from 'next/image';
 import Link from 'next/link';
 import FAQSection from '@/components/ui/FAQSection';
-import { SITE_URL, SITE_NAME, BRAND_NAME, BIZLEAP_CONTACT_URL } from '@/config/site';
+import { SITE_URL, SITE_NAME, BRAND_NAME } from '@/config/site';
 
 export const metadata: Metadata = {
   title: {
@@ -54,8 +54,8 @@ const servicesFaqs = [
     answer: 'Yes, we provide end-to-end full-stack web development services in Nagpur and across Maharashtra. Our services include frontend design, backend architecture, API integrations, database design, and cloud deployment.',
   },
   {
-    question: 'How much does a custom e-commerce website cost in Nagpur?',
-    answer: 'E-commerce development costs vary based on features, inventory size, custom integrations, and whether you need Shopify or a fully custom Next.js/Node.js stack. Contact us for a transparent estimate tailored to your enterprise goals.',
+    question: 'What is the process for developing a custom e-commerce website in Nagpur?',
+    answer: 'Our e-commerce development process begins with architecture and catalogue modeling, followed by UI/UX prototyping in Figma, Next.js frontend engineering, secure payment gateway integrations (Razorpay, Stripe), automated inventory synchronization, and performance optimization for mobile checkouts.',
   },
   {
     question: 'Do you offer mobile app development services in Nagpur?',
@@ -88,8 +88,8 @@ const services = [
     desc: 'From iOS to Android, we engineer fluid, high-performance mobile applications that users love. We focus on seamless animations, battery efficiency, offline caching, and intuitive navigation.',
     mainIcon: Smartphone,
     serviceUrl: '/services/mobile-app-development-nagpur',
-    secondaryUrl: BIZLEAP_CONTACT_URL,
-    secondaryLabel: 'Start a Project',
+    secondaryUrl: '/contact',
+    secondaryLabel: 'Discuss Your App',
     tags: [
       { name: 'Native Feel', icon: Smartphone },
       { name: 'High Speed', icon: Zap },
@@ -103,8 +103,8 @@ const services = [
     desc: "We design interfaces that don't just look stunning—they convert. By combining psychological design principles with modern aesthetics, we create digital products that feel effortless and memorable.",
     mainIcon: Layout,
     serviceUrl: '/services/ui-ux-design-nagpur',
-    secondaryUrl: BIZLEAP_CONTACT_URL,
-    secondaryLabel: 'Start a Project',
+    secondaryUrl: '/contact',
+    secondaryLabel: 'Book UI/UX Sprint',
     tags: [
       { name: 'Wireframing', icon: Layout },
       { name: 'Brand Identity', icon: Fingerprint },
@@ -118,8 +118,8 @@ const services = [
     desc: 'We architect robust e-commerce platforms that process high-volume transactions with lightning-fast checkouts, custom payment gateways, and advanced inventory management systems.',
     mainIcon: ShoppingCart,
     serviceUrl: '/services/ecommerce-website-development-nagpur',
-    secondaryUrl: BIZLEAP_CONTACT_URL,
-    secondaryLabel: 'Start a Project',
+    secondaryUrl: '/contact',
+    secondaryLabel: 'Build Your Store',
     tags: [
       { name: 'Scalability', icon: Server },
       { name: 'Security', icon: ShieldCheck },
@@ -127,6 +127,21 @@ const services = [
     ],
     img: '/images/e3f7114d-6823-4c2b-a29f-0ee669d486cc.png',
     altText: 'Enterprise E-Commerce Development in Nagpur'
+  },
+  {
+    title: <>Next.js <br /><span className={styles.accentText}>Engineering</span></>,
+    desc: 'Enterprise Next.js App Router development featuring React Server Components, sub-second TTFB, edge cloud deployments, and seamless legacy platform migrations.',
+    mainIcon: Server,
+    serviceUrl: '/services/nextjs-development',
+    secondaryUrl: '/contact',
+    secondaryLabel: 'Start Next.js Build',
+    tags: [
+      { name: 'App Router', icon: Server },
+      { name: 'SSR & RSC', icon: Zap },
+      { name: 'Edge CDN', icon: Cloud }
+    ],
+    img: '/images/fs_mockup_4k.jpg',
+    altText: 'Enterprise Next.js Development in Nagpur'
   }
 ];
 

@@ -132,9 +132,6 @@ export default function AboutPage() {
             </a>.
           </p>
 
-          <div className={styles.todoBox}>
-            <strong>TODO for Owner Review:</strong> Confirm company founding year, team headcount disclosures, and any registered certifications or ISO accreditations held by BizLeap India Pvt. Ltd.
-          </div>
 
           <h2>Our Core Engineering Principles</h2>
           <p>

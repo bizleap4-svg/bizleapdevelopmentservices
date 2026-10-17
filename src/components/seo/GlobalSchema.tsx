@@ -5,6 +5,7 @@ import {
   LEGAL_NAME,
   BRAND_NAME,
   CONTACT_PHONE_CLEAN,
+  CONTACT_PHONE,
   CONTACT_EMAIL,
   ADDRESS,
   GEO,
@@ -29,7 +30,7 @@ export default function GlobalSchema() {
         },
         parentOrganization: {
           '@type': 'Organization',
-          name: 'Bizleap Digital Marketing',
+          name: LEGAL_NAME,
           url: SOCIAL_LINKS.marketingPartner,
         },
         sameAs: [
@@ -40,7 +41,7 @@ export default function GlobalSchema() {
         contactPoint: {
           '@type': 'ContactPoint',
           telephone: CONTACT_PHONE_CLEAN,
-          contactType: 'customer support',
+          contactType: 'sales and customer support',
           email: CONTACT_EMAIL,
           areaServed: ['IN', 'Nagpur', 'Maharashtra'],
           availableLanguage: ['English', 'Hindi', 'Marathi'],
@@ -52,13 +53,13 @@ export default function GlobalSchema() {
         url: SITE_URL,
         name: BRAND_NAME,
         description:
-          'Bizleap Development is a premier website, mobile app, and e-commerce development company in Nagpur. Scalable engineering for growth.',
+          'Bizleap Development builds custom websites, e-commerce stores, and mobile apps in Nagpur. Scalable Next.js engineering tailored for business growth.',
         publisher: {
           '@id': `${SITE_URL}/#organization`,
         },
       },
       {
-        '@type': 'ProfessionalService',
+        '@type': ['LocalBusiness', 'ProfessionalService'],
         '@id': `${SITE_URL}/#professionalservice`,
         name: SITE_NAME,
         image: `${SITE_URL}/images/bizleap_laptop_mockup.jpg`,
@@ -66,6 +67,16 @@ export default function GlobalSchema() {
         telephone: CONTACT_PHONE_CLEAN,
         email: CONTACT_EMAIL,
         priceRange: '₹₹',
+        parentOrganization: {
+          '@type': 'Organization',
+          name: LEGAL_NAME,
+          url: SOCIAL_LINKS.marketingPartner,
+        },
+        sameAs: [
+          SOCIAL_LINKS.marketingPartner,
+          SOCIAL_LINKS.instagram,
+          SOCIAL_LINKS.linkedin,
+        ],
         address: {
           '@type': 'PostalAddress',
           streetAddress: ADDRESS.streetAddress,

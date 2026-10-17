@@ -13,9 +13,9 @@ export default function WorkGallery() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const displayedWork = activeCategory === 'All' 
-    ? PORTFOLIO_PROJECTS 
-    : PORTFOLIO_PROJECTS.filter(p => p.category === activeCategory);
+  const displayedWork = PORTFOLIO_PROJECTS.filter(
+    (p) => p.hasLiveDomain && (activeCategory === 'All' || p.category === activeCategory)
+  );
 
   return (
     <section className={styles.portfolioSection}>

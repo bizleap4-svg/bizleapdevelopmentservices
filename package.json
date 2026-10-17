@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "check-drafts": "node scripts/check-draft-text.mjs",
+    "prebuild": "node scripts/check-draft-text.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

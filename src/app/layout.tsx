@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s',
   },
   description:
-    'Bizleap Development builds high-performance websites, Next.js applications, mobile apps, and e-commerce stores in Nagpur. Scalable engineering for growth.',
+    'Bizleap Development builds custom websites, e-commerce stores, and mobile apps in Nagpur. Scalable Next.js engineering tailored for business growth.',
   authors: [{ name: BRAND_NAME, url: SITE_URL }],
   creator: BRAND_NAME,
   publisher: BRAND_NAME,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: BRAND_NAME,
     title: 'Website & App Development Company in Nagpur | Bizleap Development',
     description:
-      'Bizleap Development builds high-performance websites, Next.js applications, mobile apps, and e-commerce stores in Nagpur. Scalable engineering for growth.',
+      'Bizleap Development builds custom websites, e-commerce stores, and mobile apps in Nagpur. Scalable Next.js engineering tailored for business growth.',
     images: [
       {
         url: '/images/bizleap_laptop_mockup.jpg',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Website & App Development Company in Nagpur | Bizleap Development',
     description:
-      'Bizleap Development builds high-performance websites, Next.js applications, mobile apps, and e-commerce stores in Nagpur. Scalable engineering for growth.',
+      'Bizleap Development builds custom websites, e-commerce stores, and mobile apps in Nagpur. Scalable Next.js engineering tailored for business growth.',
     images: ['/images/bizleap_laptop_mockup.jpg'],
     creator: '@bizleap',
   },

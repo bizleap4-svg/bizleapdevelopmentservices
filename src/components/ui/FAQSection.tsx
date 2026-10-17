@@ -11,28 +11,28 @@ export type FAQ = {
 
 export const defaultHomeFaqs: FAQ[] = [
   {
-    question: 'How much does a website development project cost in Nagpur?',
-    answer: 'Website development costs in Nagpur typically range from ₹15,000 for standard business sites to ₹1,50,000+ for custom Next.js web applications and feature-rich e-commerce platforms. Final pricing depends on integrations, custom UI/UX design, database architecture, and performance requirements.',
+    question: 'What website and web application development services does Bizleap provide in Nagpur?',
+    answer: 'Bizleap Development delivers comprehensive web and mobile engineering services in Nagpur. Our capabilities include custom website development, enterprise Next.js and React web applications, high-conversion e-commerce storefronts, cross-platform mobile apps for iOS and Android, and UI/UX interface design. All software is custom engineered to meet specific business objectives.',
   },
   {
-    question: 'Next.js vs WordPress: Which platform is better for our business?',
-    answer: 'Next.js offers superior page speed, enterprise-grade security, tailored workflows, and perfect Core Web Vitals, making it ideal for modern brands and scalable web applications. WordPress is suitable for basic content blogs, but Next.js delivers higher conversion rates, zero plugin bloat, and unmatched scalability.',
+    question: 'What technologies and programming frameworks do you use for web and app development?',
+    answer: 'We build on a modern, production-proven technology stack centred around Next.js, React, TypeScript, and Node.js on the backend. For mobile development, we utilize React Native and Flutter for near-native performance across iOS and Android. Our database and cloud solutions leverage PostgreSQL, MongoDB, Redis, and high-availability edge deployments on Vercel and AWS.',
   },
   {
-    question: 'What is the typical timeline to build and launch a custom website?',
-    answer: 'A standard business website typically takes 2 to 3 weeks from initial wireframes to production deployment. Complex custom web applications, multi-vendor e-commerce portals, and enterprise platforms usually require 4 to 8 weeks, including thorough QA testing and mobile optimization.',
+    question: 'What is the typical timeline to build and launch a custom website or application?',
+    answer: 'Project timelines depend on technical scope and architecture complexity. A standard custom corporate website is typically delivered within 2 to 4 weeks. Full-scale web applications, custom e-commerce storefronts, and mobile applications usually require 4 to 8 weeks, including UI prototyping in Figma, API engineering, Core Web Vitals optimization, and multi-device QA.',
   },
   {
-    question: 'Do you provide native and cross-platform mobile app development?',
-    answer: 'Yes, Bizleap Development engineers native and cross-platform mobile applications for both iOS and Android using modern frameworks like React Native and Flutter. We provide end-to-end services from UI/UX design and API engineering to App Store and Google Play deployment.',
+    question: 'Why should businesses choose a Nagpur-based development company?',
+    answer: 'Partnering with a Nagpur-based engineering studio gives you direct access to local software engineers, real-time collaboration, and transparent sprint reviews without offshore communication barriers or timezone delays. We support enterprises across Nagpur, the Vidarbha region, and clients across India with international software quality standards.',
   },
   {
-    question: 'Can you redesign our existing website without losing our current SEO rankings?',
-    answer: 'Yes. We specialize in website redesigns and legacy modernization. We map out all existing URL structures, implement strict 301 redirects, preserve established metadata, and improve site speed and mobile usability to protect and enhance your search rankings.',
+    question: 'Can you rebuild an existing website without losing current search engine rankings?',
+    answer: 'Yes. We specialize in legacy platform migrations and website rebuilds from WordPress, PHP, or older frameworks to Next.js. We implement meticulous 301 URL redirect maps, preserve existing meta architecture, and enhance Core Web Vitals to protect your established organic authority and improve user conversion.',
   },
   {
-    question: 'What website maintenance and ongoing support packages do you offer?',
-    answer: 'We provide comprehensive website maintenance plans covering continuous uptime monitoring, security patches, regular backups, Core Web Vitals optimization, database performance tuning, and on-demand feature updates to keep your application fast and secure.',
+    question: 'How does Bizleap Development coordinate with digital marketing campaigns?',
+    answer: 'Bizleap Development focuses strictly on web, mobile, and software engineering. For specialized SEO audits, Google Ads management, Meta performance marketing, and creative campaigns, we coordinate seamlessly with our digital marketing partner, BizLeap India Pvt. Ltd. (bizleap.in), ensuring your web platform is technically primed for marketing conversions.',
   },
 ];
 
@@ -115,7 +115,7 @@ export default function FAQSection({
         </div>
       </div>
       
-      {/* FAQ Schema: strictly rendered only where visible FAQ text exists */}
+      {/* FAQ Schema: strictly rendered where visible FAQ text exists */}
       {renderSchema && (
         <script
           type="application/ld+json"

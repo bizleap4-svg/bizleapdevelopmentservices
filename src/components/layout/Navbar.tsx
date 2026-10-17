@@ -35,9 +35,9 @@ export default function Navbar() {
           >
             <Phone size={14} /> Let&apos;s Talk
           </a>
-          <a href={BIZLEAP_CONTACT_URL} className={styles.primaryButton}>
+          <Link href="/contact" className={styles.primaryButton}>
             Start a Project <ArrowRight size={16} />
-          </a>
+          </Link>
           
           <button 
             className={styles.hamburgerBtn} 
@@ -59,13 +59,13 @@ export default function Navbar() {
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           
           <div className={styles.mobileCtaGroup}>
-            <a
-              href={BIZLEAP_CONTACT_URL}
+            <Link
+              href="/contact"
               className={styles.mobilePrimaryButton}
               onClick={() => setMobileMenuOpen(false)}
             >
               Start a Project <ArrowRight size={16} />
-            </a>
+            </Link>
             <a
               href={`tel:${CONTACT_PHONE_CLEAN}`}
               className={styles.mobileSecondaryButton}
