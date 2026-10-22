@@ -1,8 +1,11 @@
 // Single Source of Truth for site domain and canonical URLs
 export const SITE_URL = 'https://www.bizdevelopment.in';
 
-export const SITE_NAME = 'Bizleap Development Services';
-export const BRAND_NAME = 'Bizleap Development';
+export const WEBSITE_NAME = 'BizDevelopment';
+export const SITE_NAME = 'BizDevelopment';
+export const BRAND_NAME = 'BizDevelopment';
+export const BRAND_SUBTITLE = 'by Bizleap';
+export const ALT_BRAND_NAME = 'Bizleap Development';
 export const LEGAL_NAME = 'BizLeap India Pvt. Ltd.';
 
 export const CONTACT_PHONE = '+91 70970 95152';

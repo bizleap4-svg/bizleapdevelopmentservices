@@ -14,25 +14,25 @@ import {
 import styles from '../services/service-page.module.css';
 
 export const metadata: Metadata = {
-  title: 'About Bizleap Development | Website & App Engineering',
+  title: 'About BizDevelopment | Website & App Engineering by Bizleap',
   description:
-    'Learn about Bizleap Development Services, the web and mobile app development arm of BizLeap India Pvt. Ltd. based in Nagpur. Scalable engineering for growth.',
+    'Learn about BizDevelopment (presented as Bizleap Development), the website and app development division of BizLeap India Pvt. Ltd. based in Nagpur. Scalable engineering for growth.',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Bizleap Development | Website & App Engineering',
+    title: 'About BizDevelopment | Website & App Engineering by Bizleap',
     description:
-      'Learn about Bizleap Development Services, the web and mobile app development arm of BizLeap India Pvt. Ltd. based in Nagpur. Scalable engineering for growth.',
+      'Learn about BizDevelopment (presented as Bizleap Development), the website and app development division of BizLeap India Pvt. Ltd. based in Nagpur. Scalable engineering for growth.',
     url: `${SITE_URL}/about`,
     type: 'website',
-    siteName: BRAND_NAME,
+    siteName: 'BizDevelopment',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Bizleap Development | Website & App Engineering',
+    title: 'About BizDevelopment | Website & App Engineering by Bizleap',
     description:
-      'Learn about Bizleap Development Services, the web and mobile app development arm of BizLeap India Pvt. Ltd. based in Nagpur. Scalable engineering for growth.',
+      'Learn about BizDevelopment (presented as Bizleap Development), the website and app development division of BizLeap India Pvt. Ltd. based in Nagpur. Scalable engineering for growth.',
   },
 };
 
@@ -41,16 +41,18 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     '@id': `${SITE_URL}/about#webpage`,
-    name: 'About Bizleap Development Services',
+    name: 'About BizDevelopment',
     url: `${SITE_URL}/about`,
     mainEntity: {
       '@type': 'Organization',
-      name: SITE_NAME,
+      '@id': `${SITE_URL}/#organization`,
+      name: 'BizDevelopment',
+      alternateName: 'Bizleap Development Services',
       legalName: LEGAL_NAME,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       parentOrganization: {
         '@type': 'Organization',
-        name: 'Bizleap Digital Marketing',
+        name: LEGAL_NAME,
         url: SOCIAL_LINKS.marketingPartner,
       },
       address: {
@@ -78,9 +80,9 @@ export default function AboutPage() {
 
         <header className={styles.hero}>
           <span className={styles.badge}>Our Studio • Nagpur, Maharashtra</span>
-          <h1 className={styles.title}>About Bizleap Development Services</h1>
+          <h1 className={styles.title}>About BizDevelopment</h1>
           <p className={styles.lead}>
-            Bizleap Development Services is the specialized web and mobile application development division of <strong>{LEGAL_NAME}</strong>, headquartered in Nagpur. We engineer high-performance web applications, custom digital architectures, and scalable e-commerce systems for brands that demand measurable business growth.
+            BizDevelopment (presented as Bizleap Development Services) is the specialized web and mobile application development division of <strong>{LEGAL_NAME}</strong>, headquartered in Nagpur. We engineer high-performance web applications, custom digital architectures, and scalable e-commerce systems for brands that demand measurable business growth.
           </p>
         </header>
 
@@ -114,7 +116,7 @@ export default function AboutPage() {
           </p>
           <ul>
             <li>
-              <strong>Bizleap Development Services (this website, <a href={SITE_URL}>{SITE_URL}</a>):</strong> Dedicated entirely to technical software engineering, website development, React & Next.js architectures, mobile application engineering, and custom UI/UX design systems.
+              <strong>BizDevelopment / Bizleap Development Services (this website, <a href={SITE_URL}>{SITE_URL}</a>):</strong> Dedicated entirely to technical software engineering, website development, React & Next.js architectures, mobile application engineering, and custom UI/UX design systems.
             </li>
             <li>
               <strong>Bizleap Digital Marketing Partner (<a href={SOCIAL_LINKS.marketingPartner} target="_blank" rel="noopener noreferrer">bizleap.in</a>):</strong> Our affiliated full-service digital marketing division specializing in search engine optimization (SEO), Meta advertising, Google Ads management, social media strategy, and ROI-driven performance marketing campaigns.

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       'Contact Bizleap Development in Nagpur for website development, mobile apps, e-commerce, and UI/UX design. Request a consultation or project estimate.',
     url: `${SITE_URL}/contact`,
     type: 'website',
-    siteName: BRAND_NAME,
+    siteName: 'BizDevelopment',
   },
   twitter: {
     card: 'summary_large_image',
@@ -49,9 +49,10 @@ export default function ContactPage() {
     url: `${SITE_URL}/contact`,
     mainEntity: {
       '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
       name: SITE_NAME,
       legalName: LEGAL_NAME,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       telephone: CONTACT_PHONE_CLEAN,
       email: CONTACT_EMAIL,
       address: {

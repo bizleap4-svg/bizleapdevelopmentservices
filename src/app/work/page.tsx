@@ -24,13 +24,13 @@ export const metadata: Metadata = {
       'Explore our portfolio of custom websites, mobile applications, and high-converting e-commerce platforms engineered in Nagpur by Bizleap Development.',
     url: `${SITE_URL}/work`,
     type: 'website',
-    siteName: BRAND_NAME,
+    siteName: 'BizDevelopment',
     images: [
       {
         url: '/images/bizleap_laptop_mockup.jpg',
         width: 1200,
         height: 630,
-        alt: 'Bizleap Development Portfolio & Case Studies',
+        alt: 'BizDevelopment Portfolio & Case Studies',
       },
     ],
   },
@@ -76,8 +76,9 @@ export default function WorkPage() {
           'Curated portfolio of modern digital platforms, high-conversion e-commerce stores, and custom software engineered by Bizleap Development.',
         'creator': {
           '@type': 'Organization',
+          '@id': `${SITE_URL}/#organization`,
           'name': SITE_NAME,
-          'url': SITE_URL,
+          'url': `${SITE_URL}/`,
         },
       },
     ],

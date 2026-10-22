@@ -48,6 +48,31 @@
   z-index: 2;
 }
 
+.heroBrandBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  background-color: rgba(229, 184, 46, 0.12);
+  border: 1px solid rgba(229, 184, 46, 0.35);
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.brandBadgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-yellow);
+  display: inline-block;
+}
+
 .heroSplitTitle {
   font-family: var(--font-heading);
   font-size: clamp(3rem, 5vw, 5.5rem);

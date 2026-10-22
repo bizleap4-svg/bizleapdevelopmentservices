@@ -9,9 +9,10 @@ export function proxy(request: NextRequest) {
   const isBareDomain = host === 'bizdevelopment.in';
   const isHttp = proto === 'http';
 
-  // 1. Redirect bare domain or http requests to https://www.bizdevelopment.in
+  // 1. Redirect bare domain or http requests to https://www.bizdevelopment.in (strip trailing slash in single hop)
   if (isBareDomain || isHttp) {
-    const targetUrl = new URL(`${pathname}${search}`, 'https://www.bizdevelopment.in');
+    const cleanPath = pathname.length > 1 && pathname.endsWith('/') ? pathname.replace(/\/+$/, '') : pathname;
+    const targetUrl = new URL(`${cleanPath}${search}`, 'https://www.bizdevelopment.in');
     return NextResponse.redirect(targetUrl, 301);
   }
 

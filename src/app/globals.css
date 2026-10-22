@@ -116,3 +116,11 @@ html {
   scroll-padding-top: 100px; /* Accounts for fixed navbar */
 }
 
+/* Accessibility & Scripting Fallback for Pre-rendered Content */
+@media (scripting: none) {
+  [style*="opacity: 0"],
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+  }
+}
+

@@ -55,7 +55,7 @@ export default function DynamicTitle() {
           (scrollInterval.current as any).terminate();
           scrollInterval.current = null;
         }
-        document.title = originalTitle || 'Bizleap Development | Website & App Development';
+        document.title = originalTitle || 'BizDevelopment | Website & App Development in Nagpur';
 
         // Restore favicons
         links.forEach((link: any) => {

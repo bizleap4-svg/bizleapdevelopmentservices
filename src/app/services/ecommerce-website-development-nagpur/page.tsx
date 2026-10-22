@@ -67,8 +67,9 @@ export default function EcommerceWebsiteDevelopmentNagpurPage() {
     serviceType: 'E-Commerce Development',
     provider: {
       '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
       name: SITE_NAME,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
     },
     areaServed: {
       '@type': 'City',

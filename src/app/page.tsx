@@ -180,6 +180,16 @@ export default function Home() {
           </video>
           <div className={styles.heroSplitGrid}>
             <div className={styles.heroSplitLeft}>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className={styles.heroBrandBadge}
+              >
+                <span className={styles.brandBadgeDot} />
+                BizDevelopment by Bizleap
+              </motion.div>
+
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -197,7 +207,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
-                Bizleap Development is a premier website and app development company in Nagpur. We engineer high-performance custom websites, Next.js applications, mobile apps, and scalable e-commerce platforms.
+                BizDevelopment is the website and app development arm of Bizleap in Nagpur, operating as Bizleap Development. We engineer high-performance custom websites, Next.js applications, mobile apps, and scalable e-commerce platforms.
               </motion.p>
 
               <motion.div 
@@ -672,7 +682,7 @@ export default function Home() {
                   Need Full-Funnel Digital Growth?
                 </h4>
                 <p style={{ margin: 0, color: '#555', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                  Bizleap Development focuses strictly on software, website, and mobile app engineering. For specialized SEO audits, Google Ads management, Meta performance marketing, and creative campaigns, our clients partner with our sister agency{' '}
+                  BizDevelopment (operating as Bizleap Development) focuses strictly on software, website, and mobile app engineering. For specialized SEO audits, Google Ads management, Meta performance marketing, and creative campaigns, our clients partner with our affiliated division{' '}
                   <a 
                     href={SOCIAL_LINKS.marketingPartner} 
                     target="_blank" 
@@ -685,7 +695,7 @@ export default function Home() {
               </div>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link href="/about" style={{ padding: '0.75rem 1.5rem', background: '#ffffff', border: '1px solid #ddd', borderRadius: '8px', color: '#111', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
-                  About Our Studio
+                  About BizDevelopment
                 </Link>
                 <Link href="/contact" style={{ padding: '0.75rem 1.5rem', background: '#111', color: '#fff', borderRadius: '8px', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>
                   Contact Engineers

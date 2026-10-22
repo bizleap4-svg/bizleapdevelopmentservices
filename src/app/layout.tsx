@@ -3,7 +3,7 @@ import './globals.css';
 import SmoothScroll from '@/components/layout/SmoothScroll';
 import DynamicTitle from '@/components/ui/DynamicTitle';
 import GlobalSchema from '@/components/seo/GlobalSchema';
-import { SITE_URL, BRAND_NAME } from '@/config/site';
+import { SITE_URL, BRAND_NAME, WEBSITE_NAME } from '@/config/site';
 
 export const viewport: Viewport = {
   themeColor: '#ffffff',
@@ -17,16 +17,16 @@ const isPreview = process.env.VERCEL_ENV === 'preview';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Website & App Development Company in Nagpur | Bizleap Development',
+    default: 'BizDevelopment | Website & App Development in Nagpur',
     template: '%s',
   },
   description:
-    'Bizleap Development builds custom websites, e-commerce stores, and mobile apps in Nagpur. Scalable Next.js engineering tailored for business growth.',
-  authors: [{ name: BRAND_NAME, url: SITE_URL }],
+    'BizDevelopment is the website and app development arm of Bizleap in Nagpur. Explore custom websites, e-commerce stores, mobile apps and our project portfolio.',
+  authors: [{ name: 'BizDevelopment by Bizleap', url: SITE_URL }],
   creator: BRAND_NAME,
   publisher: BRAND_NAME,
   category: 'technology',
-  applicationName: BRAND_NAME,
+  applicationName: WEBSITE_NAME,
   alternates: {
     canonical: '/',
   },
@@ -34,24 +34,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: SITE_URL,
-    siteName: BRAND_NAME,
-    title: 'Website & App Development Company in Nagpur | Bizleap Development',
+    siteName: WEBSITE_NAME,
+    title: 'BizDevelopment | Website & App Development in Nagpur',
     description:
-      'Bizleap Development builds custom websites, e-commerce stores, and mobile apps in Nagpur. Scalable Next.js engineering tailored for business growth.',
+      'BizDevelopment is the website and app development arm of Bizleap in Nagpur. Explore custom websites, e-commerce stores, mobile apps and our project portfolio.',
     images: [
       {
         url: '/images/bizleap_laptop_mockup.jpg',
         width: 1200,
         height: 630,
-        alt: 'Bizleap Development - Website & App Development Company Nagpur',
+        alt: 'BizDevelopment by Bizleap - Website & App Development in Nagpur',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Website & App Development Company in Nagpur | Bizleap Development',
+    title: 'BizDevelopment | Website & App Development in Nagpur',
     description:
-      'Bizleap Development builds custom websites, e-commerce stores, and mobile apps in Nagpur. Scalable Next.js engineering tailored for business growth.',
+      'BizDevelopment is the website and app development arm of Bizleap in Nagpur. Explore custom websites, e-commerce stores, mobile apps and our project portfolio.',
     images: ['/images/bizleap_laptop_mockup.jpg'],
     creator: '@bizleap',
   },

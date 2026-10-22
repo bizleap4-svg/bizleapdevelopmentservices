@@ -14,8 +14,8 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center' }} aria-label="Bizleap Development Home">
-            <Image src="/logo-dark.png" alt="Bizleap Development Logo" width={150} height={40} style={{ objectFit: 'contain' }} priority />
+          <Link href="/" style={{ display: 'flex', alignItems: 'center' }} aria-label="BizDevelopment by Bizleap Home">
+            <Image src="/logo-dark.png" alt="BizDevelopment by Bizleap Logo" width={150} height={40} style={{ objectFit: 'contain' }} priority />
           </Link>
         </div>
         

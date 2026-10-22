@@ -19,11 +19,11 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.top}>
           <div className={styles.brand}>
-            <Link href="/" style={{ display: 'inline-flex' }} aria-label="Bizleap Development Home">
-              <Image src="/logo-dark.png" alt={`${BRAND_NAME} Logo`} width={200} height={60} style={{ objectFit: 'contain' }} />
+            <Link href="/" style={{ display: 'inline-flex' }} aria-label="BizDevelopment by Bizleap Home">
+              <Image src="/logo-dark.png" alt="BizDevelopment by Bizleap Logo" width={200} height={60} style={{ objectFit: 'contain' }} />
             </Link>
             <p className={styles.brandDesc}>
-              Built to ship. Not just impress. We engineer high-performance web applications, custom software, and scalable e-commerce platforms.
+              <strong>BizDevelopment by Bizleap</strong> — Built to ship. Not just impress. We engineer high-performance web applications, custom software, and scalable e-commerce platforms.
             </p>
             <div style={{ marginTop: '0.5rem', padding: '0.85rem 1rem', background: '#f8f9fa', borderRadius: '8px', borderLeft: '3px solid var(--accent-yellow)', maxWidth: '340px' }}>
               <p style={{ margin: 0, fontSize: '0.85rem', color: '#444', lineHeight: 1.5 }}>
@@ -52,7 +52,7 @@ export default function Footer() {
 
           <div className={styles.column}>
             <h4 className={styles.colTitle}>Company</h4>
-            <Link href="/about">About Bizleap</Link>
+            <Link href="/about">About BizDevelopment</Link>
             <Link href="/work">Our Work</Link>
             <Link href="/contact">Contact Us</Link>
             <a 

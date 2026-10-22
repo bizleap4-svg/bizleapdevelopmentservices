@@ -4,6 +4,8 @@ import {
   SITE_NAME,
   LEGAL_NAME,
   BRAND_NAME,
+  ALT_BRAND_NAME,
+  WEBSITE_NAME,
   CONTACT_PHONE_CLEAN,
   CONTACT_PHONE,
   CONTACT_EMAIL,
@@ -19,9 +21,10 @@ export default function GlobalSchema() {
       {
         '@type': 'Organization',
         '@id': `${SITE_URL}/#organization`,
-        name: SITE_NAME,
+        name: WEBSITE_NAME,
+        alternateName: ALT_BRAND_NAME,
         legalName: LEGAL_NAME,
-        url: SITE_URL,
+        url: `${SITE_URL}/`,
         logo: {
           '@type': 'ImageObject',
           url: `${SITE_URL}/logo-dark.png`,
@@ -34,7 +37,6 @@ export default function GlobalSchema() {
           url: SOCIAL_LINKS.marketingPartner,
         },
         sameAs: [
-          SOCIAL_LINKS.marketingPartner,
           SOCIAL_LINKS.instagram,
           SOCIAL_LINKS.linkedin,
         ],
@@ -50,10 +52,11 @@ export default function GlobalSchema() {
       {
         '@type': 'WebSite',
         '@id': `${SITE_URL}/#website`,
-        url: SITE_URL,
-        name: BRAND_NAME,
+        url: 'https://www.bizdevelopment.in/',
+        name: 'BizDevelopment',
+        alternateName: 'Bizleap Development',
         description:
-          'Bizleap Development builds custom websites, e-commerce stores, and mobile apps in Nagpur. Scalable Next.js engineering tailored for business growth.',
+          'BizDevelopment is the website and app development arm of Bizleap in Nagpur. Explore custom websites, e-commerce stores, mobile apps and our project portfolio.',
         publisher: {
           '@id': `${SITE_URL}/#organization`,
         },
@@ -61,9 +64,10 @@ export default function GlobalSchema() {
       {
         '@type': ['LocalBusiness', 'ProfessionalService'],
         '@id': `${SITE_URL}/#professionalservice`,
-        name: SITE_NAME,
+        name: `${WEBSITE_NAME} by Bizleap`,
+        alternateName: ALT_BRAND_NAME,
         image: `${SITE_URL}/images/bizleap_laptop_mockup.jpg`,
-        url: SITE_URL,
+        url: `${SITE_URL}/`,
         telephone: CONTACT_PHONE_CLEAN,
         email: CONTACT_EMAIL,
         priceRange: '₹₹',
@@ -73,7 +77,6 @@ export default function GlobalSchema() {
           url: SOCIAL_LINKS.marketingPartner,
         },
         sameAs: [
-          SOCIAL_LINKS.marketingPartner,
           SOCIAL_LINKS.instagram,
           SOCIAL_LINKS.linkedin,
         ],

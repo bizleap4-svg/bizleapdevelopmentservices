@@ -82,13 +82,15 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     dateModified: project.lastMod,
     creator: {
       '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
       name: SITE_NAME,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
       name: SITE_NAME,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
     },
     about: {
       '@type': 'Thing',

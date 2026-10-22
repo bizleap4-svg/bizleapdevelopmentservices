@@ -24,13 +24,13 @@ export const metadata: Metadata = {
       'Explore custom website development, Next.js engineering, mobile app development, e-commerce solutions, and UI/UX design in Nagpur by Bizleap Development.',
     url: `${SITE_URL}/services`,
     type: 'website',
-    siteName: BRAND_NAME,
+    siteName: 'BizDevelopment',
     images: [
       {
         url: '/images/full_stack_final.png',
         width: 1200,
         height: 630,
-        alt: 'Bizleap Web, App & E-Commerce Development Services',
+        alt: 'BizDevelopment Web, App & E-Commerce Development Services',
       },
     ],
   },
@@ -155,8 +155,9 @@ export default function ServicesPage() {
         'name': 'Full-Stack Web Development',
         'provider': {
           '@type': 'Organization',
+          '@id': `${SITE_URL}/#organization`,
           'name': SITE_NAME,
-          'url': SITE_URL,
+          'url': `${SITE_URL}/`,
         },
         'description':
           'Highly scalable, blazingly fast, and completely custom web applications built with Next.js, React, and Node.js.',
@@ -172,8 +173,9 @@ export default function ServicesPage() {
         'name': 'Mobile App Development',
         'provider': {
           '@type': 'Organization',
+          '@id': `${SITE_URL}/#organization`,
           'name': SITE_NAME,
-          'url': SITE_URL,
+          'url': `${SITE_URL}/`,
         },
         'description':
           'Native and cross-platform mobile apps for iOS and Android with fluid animations and backend integrations.',
@@ -189,8 +191,9 @@ export default function ServicesPage() {
         'name': 'Enterprise E-Commerce Development',
         'provider': {
           '@type': 'Organization',
+          '@id': `${SITE_URL}/#organization`,
           'name': SITE_NAME,
-          'url': SITE_URL,
+          'url': `${SITE_URL}/`,
         },
         'description':
           'Conversion-focused custom and Shopify e-commerce platforms with payment integrations and inventory systems.',
@@ -206,8 +209,9 @@ export default function ServicesPage() {
         'name': 'UI/UX Design & Prototyping',
         'provider': {
           '@type': 'Organization',
+          '@id': `${SITE_URL}/#organization`,
           'name': SITE_NAME,
-          'url': SITE_URL,
+          'url': `${SITE_URL}/`,
         },
         'description':
           'Modern UI/UX design, wireframing, interactive prototyping, and brand identity design that drives conversions.',
