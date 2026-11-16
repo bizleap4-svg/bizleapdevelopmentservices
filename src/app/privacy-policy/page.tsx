@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | Bizleap Development Services',
   description:
     'Read the Privacy Policy of Bizleap Development Services (BizLeap India Pvt. Ltd., Nagpur). Learn how we collect, use, and protect your personal information.',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: '/privacy-policy',
   },

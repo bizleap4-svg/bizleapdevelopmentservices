@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: 'Terms and Conditions | Bizleap Development Services',
   description:
     'Review the terms of service and client engagement conditions for Bizleap Development Services (BizLeap India Pvt. Ltd., Nagpur). Quality engineering standards.',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: '/terms-and-conditions',
   },

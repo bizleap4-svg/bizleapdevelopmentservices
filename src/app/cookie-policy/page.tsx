@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: 'Cookie Policy | Bizleap Development Services',
   description:
     'Learn how Bizleap Development Services uses cookies, analytics tokens, and local storage to optimize your browsing experience and safeguard web security.',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: '/cookie-policy',
   },
