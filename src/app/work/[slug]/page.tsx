@@ -163,7 +163,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     '@id': `${SITE_URL}/work/${project.slug}#project`,
     name: `${project.name} - ${project.industry}`,
     headline: `${project.name} Case Study`,
-    description: project.solution,
+    description: project.solution || project.desc,
     image: `${SITE_URL}${project.img}`,
     dateModified: project.lastMod,
     creator: {
@@ -289,11 +289,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
 
         <article className={serviceStyles.bodyContent}>
-          {/* What Was Built */}
-          <h2>Platform Overview &amp; Engineering Scope</h2>
-          <p>
-            {project.solution}
-          </p>
+          {/* What Was Built - Render ONLY if provided */}
+          {project.solution ? (
+            <>
+              <h2>Platform Overview &amp; Engineering Scope</h2>
+              <p>{project.solution}</p>
+            </>
+          ) : null}
 
           {/* Render Challenge ONLY if real data is provided */}
           {project.challenge ? (
@@ -303,25 +305,63 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </>
           ) : null}
 
-          {/* Technology Stack & Architecture */}
-          <h2>Technology Stack &amp; Implementation</h2>
-          <p>
-            Architected and deployed using production-tested frameworks to guarantee Core Web Vitals compliance, security, and responsive performance:
-          </p>
-          <div className={serviceStyles.gridCards}>
-            {project.stack.map((item, idx) => (
-              <div key={idx} className={serviceStyles.card} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1.25rem' }}>
-                <Layers size={20} color="var(--accent-yellow, #E5B82E)" style={{ flexShrink: 0 }} />
-                <span style={{ fontWeight: 600, color: '#111', fontSize: '1rem' }}>{item}</span>
-              </div>
-            ))}
-          </div>
+          {/* Technology Stack & Architecture - Render ONLY if provided */}
+          {(() => {
+            const stackItems = project.techStack && project.techStack.length > 0 ? project.techStack : project.stack;
+            if (!stackItems || stackItems.length === 0) return null;
+            return (
+              <>
+                <h2>Technology Stack &amp; Implementation</h2>
+                <p>
+                  Architected and deployed using production-tested frameworks to guarantee Core Web Vitals compliance, security, and responsive performance:
+                </p>
+                <div className={serviceStyles.gridCards}>
+                  {stackItems.map((item, idx) => (
+                    <div key={idx} className={serviceStyles.card} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1.25rem' }}>
+                      <Layers size={20} color="var(--accent-yellow, #E5B82E)" style={{ flexShrink: 0 }} />
+                      <span style={{ fontWeight: 600, color: '#111', fontSize: '1rem' }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
 
           {/* Render Results ONLY if real data is provided */}
           {project.results ? (
             <>
               <h2>Business Outcomes &amp; Performance Metrics</h2>
               <p>{project.results}</p>
+            </>
+          ) : null}
+
+          {/* Render Testimonial ONLY if real data is provided */}
+          {project.testimonial ? (
+            <>
+              <h2>Client Feedback</h2>
+              <div
+                className={serviceStyles.card}
+                style={{
+                  margin: '2rem 0',
+                  padding: '1.75rem',
+                  background: '#fafafa',
+                  borderLeft: '4px solid var(--accent-yellow, #E5B82E)',
+                }}
+              >
+                <blockquote style={{ margin: 0 }}>
+                  <p style={{ fontStyle: 'italic', fontSize: '1.05rem', color: '#222', marginBottom: '1rem', lineHeight: 1.7 }}>
+                    &ldquo;{project.testimonial.quote}&rdquo;
+                  </p>
+                  <footer>
+                    <strong style={{ display: 'block', color: '#111', fontSize: '1rem' }}>
+                      {project.testimonial.author}
+                    </strong>
+                    <span style={{ fontSize: '0.875rem', color: '#666' }}>
+                      {project.testimonial.role}
+                    </span>
+                  </footer>
+                </blockquote>
+              </div>
             </>
           ) : null}
 
