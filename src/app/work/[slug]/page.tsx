@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
-import { PORTFOLIO_PROJECTS } from '@/data/portfolio';
+import { PORTFOLIO_PROJECTS, PortfolioProject } from '@/data/portfolio';
 import { SITE_URL, SITE_NAME, BRAND_NAME } from '@/config/site';
 import { ArrowUpRight, ArrowLeft, Layers, Building2, Briefcase, ExternalLink, ArrowRight } from 'lucide-react';
 import serviceStyles from '../../services/service-page.module.css';
@@ -20,6 +20,92 @@ export async function generateStaticParams() {
   }));
 }
 
+export function getCaseStudyTitle(project: PortfolioProject): string {
+  switch (project.slug) {
+    case 'miraya':
+      return 'MIRAYA | E-Commerce Website for Fashion | BizDevelopment';
+    case 'suko':
+      return 'SUKO | E-Commerce Store for Corporate Wear | BizDevelopment';
+    case 'rajwadi':
+      return 'Rajwadi | E-Commerce Store for Ethnic Wear | BizDevelopment';
+    case 'asma':
+      return 'ASMA | Website Development for Education | BizDevelopment';
+    case 'binous':
+      return 'BINOUS | Next.js Website for Fitness & Gym | BizDevelopment';
+    case 'shutter-school':
+      return 'Shutter School | EdTech Platform for Media | BizDevelopment';
+    case 'chemora':
+      return 'Chemora | Corporate Website for Chemicals | BizDevelopment';
+    case 'urban-taxi':
+      return 'URBAN TAXI | Web App for Fleet Logistics | BizDevelopment';
+    case 'art-interiorz':
+      return 'Art Interiorz | UI/UX Design for Interiors | BizDevelopment';
+    case 'mysa':
+      return 'MYSA | UI/UX Design for Luxury Fashion | BizDevelopment';
+    case 'wealth-acumen':
+      return 'Wealth Acumen | Website for Wealth Advisory | BizDevelopment';
+    case 'oswal-jewellers':
+      return 'Oswal Jewellers | E-Commerce for Jewellery | BizDevelopment';
+    case 'taubys':
+      return 'Taubys | E-Commerce Website for Bakeries | BizDevelopment';
+    case 'mmm-hotels':
+      return 'MMM Hotels | Website Development for Hotels | BizDevelopment';
+    case 'miles-along-smiles':
+      return 'Miles Along Smiles | Web App for Clinics | BizDevelopment';
+    case 'form-6':
+      return 'Form 6 | Web Platform for Pharma Solutions | BizDevelopment';
+    case 'genekon':
+      return 'Genekon | Web Portal for Health Diagnostics | BizDevelopment';
+    default: {
+      const fallback = `${project.name} | ${project.category} | BizDevelopment`;
+      return fallback.length >= 50 && fallback.length <= 60
+        ? fallback
+        : `${project.name} Case Study | Bizleap Development`;
+    }
+  }
+}
+
+export function getCaseStudyDescription(project: PortfolioProject): string {
+  switch (project.slug) {
+    case 'miraya':
+      return 'Explore the MIRAYA case study: high-conversion fashion e-commerce storefront with fluid showcases, responsive design, and checkout by BizDevelopment.';
+    case 'suko':
+      return 'Case study for SUKO (Corporate Apparel & Uniforms). Scalable Next.js e-commerce architecture and image delivery engineered by BizDevelopment in Nagpur.';
+    case 'rajwadi':
+      return 'Case study for Rajwadi (Ethnic Wear & Traditional Apparel). High-performance e-commerce platform, checkout flows, and mobile UI by BizDevelopment.';
+    case 'asma':
+      return 'Case study for ASMA (Professional Education & Training). Modern modular web presence, academic curriculum showcase, and inquiry funnels by BizDevelopment.';
+    case 'binous':
+      return 'Case study for BINOUS (Fitness, Training & Nutrition). High-energy fitness web platform with Stripe payment integration engineered by BizDevelopment.';
+    case 'shutter-school':
+      return 'Case study for Shutter School (Creative Education & Media Arts). Ed-tech learning portal with video streaming integration engineered by BizDevelopment.';
+    case 'chemora':
+      return 'Case study for Chemora (Chemical Formulations & Life Sciences). Clean corporate web portal showcasing life sciences solutions by BizDevelopment in Nagpur.';
+    case 'urban-taxi':
+      return 'Case study for URBAN TAXI (Transport, Mobility & Fleet Logistics). Fleet logistics web application with route inquiry forms by BizDevelopment in Nagpur.';
+    case 'art-interiorz':
+      return 'Case study for Art Interiorz (Architectural & Interior Design). Visually driven portfolio showcasing residential transformations by BizDevelopment.';
+    case 'mysa':
+      return 'Case study for MYSA (Haute Couture & Luxury Fashion). Premium digital storefront reflecting luxury interaction design engineered by BizDevelopment in Nagpur.';
+    case 'wealth-acumen':
+      return 'Case study for Wealth Acumen (Wealth Management). Secure financial services web platform and confidential consultation booking by BizDevelopment in Nagpur.';
+    case 'oswal-jewellers':
+      return 'Case study for Oswal Jewellers (Fine Jewellery Retail). Opulent fine jewellery e-commerce catalogue and quote request system by BizDevelopment in Nagpur.';
+    case 'taubys':
+      return 'Case study for Taubys (Artisanal Bakery & Dining). Food ordering and bakery e-commerce experience with visual menus and scheduling by BizDevelopment.';
+    case 'mmm-hotels':
+      return 'Case study for MMM Hotels (Hospitality & Luxury Hotels). Conversion-oriented hotel web platform with room gallery tours and booking by BizDevelopment.';
+    case 'miles-along-smiles':
+      return 'Case study for Miles Along Smiles (Healthcare & Dental Care). Interactive clinic web application with automated booking workflows by BizDevelopment.';
+    case 'form-6':
+      return 'Case study for Form 6 (Pharmaceutical Documentation & Compliance). Corporate web platform highlighting B2B partner solutions by BizDevelopment.';
+    case 'genekon':
+      return 'Case study for Genekon (Diagnostic Healthcare & Genetics). Healthcare web portal with clinical clarity, fast loads, and inquiry handling by BizDevelopment.';
+    default:
+      return `Case study for ${project.name} (${project.industry}). Explore the engineering architecture, tech stack, and deployment by Bizleap Development in Nagpur.`;
+  }
+}
+
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = PORTFOLIO_PROJECTS.find((p) => p.slug === slug);
@@ -30,8 +116,8 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
     };
   }
 
-  const title = `${project.name} Case Study | Bizleap Development`;
-  const description = `Case study for ${project.name} (${project.industry}). Explore the engineering architecture, tech stack, and deployment by Bizleap Development in Nagpur.`;
+  const title = getCaseStudyTitle(project);
+  const description = getCaseStudyDescription(project);
 
   return {
     title,
