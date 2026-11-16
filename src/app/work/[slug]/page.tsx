@@ -39,7 +39,7 @@ export function getCaseStudyTitle(project: PortfolioProject): string {
     case 'urban-taxi':
       return 'URBAN TAXI | Web App for Fleet Logistics | BizDevelopment';
     case 'art-interiorz':
-      return 'Art Interiorz | UI/UX Design for Interiors | BizDevelopment';
+      return 'Art Interiorz | Web Platform with Cost Calculator | BizDev';
     case 'mysa':
       return 'MYSA | UI/UX Design for Luxury Fashion | BizDevelopment';
     case 'wealth-acumen':
@@ -74,7 +74,7 @@ export function getCaseStudyDescription(project: PortfolioProject): string {
     case 'rajwadi':
       return 'Case study for Rajwadi (Ethnic Wear and Traditional Apparel). High-performance e-commerce platform, checkout flows, and mobile UI by BizDevelopment.';
     case 'asma':
-      return 'Case study for ASMA (Professional Education). Educational website with course curriculum pages, market charts, and student inquiry funnels by BizDevelopment.';
+      return 'Case study for ASMA (Professional Education). Educational website with course curriculum pages, gallery, and student inquiry funnels by BizDevelopment.';
     case 'binous':
       return 'Case study for BINOUS (Fitness, Training and Nutrition). High-energy fitness web platform with Stripe payment integration engineered by BizDevelopment.';
     case 'shutter-school':

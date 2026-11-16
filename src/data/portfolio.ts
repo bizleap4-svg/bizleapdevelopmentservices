@@ -108,9 +108,9 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       title: 'Website Development Company in Nagpur',
       href: '/services/website-development-nagpur',
     },
-    solution: 'Developed an educational web platform for a stock market training institute using React and Vite. The platform features course curriculum pages, market analysis charts, an academy gallery, and inquiry forms. Integration with Supabase supports student authentication and dashboard access.',
-    stack: ['React', 'Vite', 'Tailwind CSS', 'Supabase'],
-    techStack: ['React', 'Vite', 'Tailwind CSS', 'React Router', 'Supabase', 'Framer Motion'],
+    solution: 'Developed an educational web platform for a stock market training institute using React and Vite. The application includes structured course catalog listings, detailed module curriculum views, an academy photo gallery, and course inquiry forms. Additional sections provide educational reference guides, institute service overviews, and student contact channels.',
+    stack: ['React', 'Vite', 'Tailwind CSS', 'React Router'],
+    techStack: ['React', 'Vite', 'Tailwind CSS', 'React Router', 'Framer Motion'],
     lastMod: '2026-10-06',
   },
   {
