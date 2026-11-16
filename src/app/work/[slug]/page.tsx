@@ -55,7 +55,7 @@ export function getCaseStudyTitle(project: PortfolioProject): string {
     case 'form-6':
       return 'Form 6 | Web Platform for Pharma Solutions | BizDevelopment';
     case 'genekon':
-      return 'Genekon | Web Portal for Health Diagnostics | BizDevelopment';
+      return 'Genekon | Pharmacy and Wholesale Commerce | BizDevelopment';
     default: {
       const fallback = `${project.name} | ${project.category} | BizDevelopment`;
       return fallback.length >= 50 && fallback.length <= 60
@@ -68,23 +68,23 @@ export function getCaseStudyTitle(project: PortfolioProject): string {
 export function getCaseStudyDescription(project: PortfolioProject): string {
   switch (project.slug) {
     case 'miraya':
-      return 'Explore the MIRAYA case study: high-conversion fashion e-commerce storefront with fluid showcases, responsive design, and checkout by BizDevelopment.';
+      return 'Case study for MIRAYA (Fashion and Apparel Retail). Custom Next.js e-commerce storefront with product collections, wishlist, and checkout by BizDevelopment.';
     case 'suko':
-      return 'Case study for SUKO (Corporate Apparel and Uniforms). Scalable Next.js e-commerce architecture and image delivery engineered by BizDevelopment in Nagpur.';
+      return 'Case study for SUKO (Corporate Apparel). React e-commerce platform with product catalogs, persistent cart drawer, and checkout engineered by BizDevelopment.';
     case 'rajwadi':
       return 'Case study for Rajwadi (Ethnic Wear and Traditional Apparel). High-performance e-commerce platform, checkout flows, and mobile UI by BizDevelopment.';
     case 'asma':
-      return 'Case study for ASMA (Professional Education and Training). Modern modular web presence, academic curriculum showcase, and inquiry funnels by BizDevelopment.';
+      return 'Case study for ASMA (Professional Education). Educational website with course curriculum pages, market charts, and student inquiry funnels by BizDevelopment.';
     case 'binous':
       return 'Case study for BINOUS (Fitness, Training and Nutrition). High-energy fitness web platform with Stripe payment integration engineered by BizDevelopment.';
     case 'shutter-school':
       return 'Case study for Shutter School (Creative Education and Media Arts). Ed-tech learning portal with video streaming integration engineered by BizDevelopment.';
     case 'chemora':
-      return 'Case study for Chemora (Chemical Formulations and Life Sciences). Clean corporate web portal showcasing life sciences solutions by BizDevelopment.';
+      return 'Case study for Chemora (Chemical Formulations). Corporate website with industrial product catalog and inquiry forms engineered by BizDevelopment in Nagpur.';
     case 'urban-taxi':
       return 'Case study for URBAN TAXI (Transport, Mobility and Fleet Logistics). Fleet logistics web application with route inquiry forms by BizDevelopment in Nagpur.';
     case 'art-interiorz':
-      return 'Case study for Art Interiorz (Architectural and Interior Design). Visually driven portfolio showcasing residential transformations by BizDevelopment.';
+      return 'Case study for Art Interiorz (Interior Design). Portfolio platform with interactive cost calculators and consultation booking forms by BizDevelopment.';
     case 'mysa':
       return 'Case study for MYSA (Haute Couture and Luxury Fashion). Premium digital storefront and bespoke interaction design engineered by BizDevelopment in Nagpur.';
     case 'wealth-acumen':
@@ -100,7 +100,7 @@ export function getCaseStudyDescription(project: PortfolioProject): string {
     case 'form-6':
       return 'Case study for Form 6 (Pharmaceutical Documentation and Compliance). Corporate web platform highlighting B2B partner solutions by BizDevelopment.';
     case 'genekon':
-      return 'Case study for Genekon (Diagnostic Healthcare and Genetics). Healthcare web portal with clinical clarity, fast loads, and inquiry handling by BizDevelopment.';
+      return 'Case study for Genekon (Online Pharmacy and Wholesale E-Commerce). Web platform with prescription upload, catalog, and Razorpay checkout by BizDevelopment.';
     default:
       return `Case study for ${project.name} (${project.industry}). Explore the engineering architecture, tech stack, and deployment by Bizleap Development in Nagpur.`;
   }
