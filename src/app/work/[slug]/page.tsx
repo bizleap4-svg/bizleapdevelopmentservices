@@ -238,16 +238,18 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 {project.industry}
               </p>
             </div>
-            <div>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: '#666', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
-                <Layers size={14} /> Primary Practice
-              </span>
-              <p style={{ margin: '0.25rem 0 0', fontWeight: 600, fontSize: '0.95rem' }}>
-                <Link href={project.primaryService.href} style={{ color: '#111', textDecoration: 'underline' }}>
-                  {project.primaryService.title}
-                </Link>
-              </p>
-            </div>
+            {project.primaryService?.href && project.primaryService?.title ? (
+              <div>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: '#666', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
+                  <Layers size={14} /> Related Service
+                </span>
+                <p style={{ margin: '0.25rem 0 0', fontWeight: 600, fontSize: '0.95rem' }}>
+                  <Link href={project.primaryService.href} style={{ color: '#111', textDecoration: 'underline' }}>
+                    {project.primaryService.title}
+                  </Link>
+                </p>
+              </div>
+            ) : null}
           </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
@@ -365,29 +367,105 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </>
           ) : null}
 
-          {/* Service Linking */}
-          <div style={{ margin: '3rem 0', padding: '1.75rem', background: '#fcfcfc', borderRadius: '12px', border: '1px solid #eeeeee' }}>
-            <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.2rem', fontWeight: 700 }}>
-              Interested in similar engineering?
-            </h3>
-            <p style={{ margin: '0 0 1rem', color: '#555', fontSize: '0.975rem', lineHeight: 1.6 }}>
-              This project was delivered under our <strong>{project.primaryService.title}</strong> practice. Learn more about our technical process, deliverables, and service scopes:
-            </p>
-            <Link
-              href={project.primaryService.href}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                color: '#111',
-                fontWeight: 600,
-                textDecoration: 'underline',
-                fontSize: '0.95rem',
-              }}
-            >
-              Explore {project.primaryService.title} <ArrowRight size={16} />
-            </Link>
-          </div>
+          {/* Related Service Linking */}
+          {project.primaryService?.href && project.primaryService?.title ? (
+            <div style={{ margin: '3rem 0', padding: '1.75rem', background: '#fcfcfc', borderRadius: '12px', border: '1px solid #eeeeee' }}>
+              <h3 style={{ margin: '0 0 0.5rem', fontSize: '1.2rem', fontWeight: 700 }}>
+                Related Service
+              </h3>
+              <p style={{ margin: '0 0 1rem', color: '#555', fontSize: '0.975rem', lineHeight: 1.6 }}>
+                This project was delivered under our <strong>{project.primaryService.title}</strong> practice:
+              </p>
+              <Link
+                href={project.primaryService.href}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  color: '#111',
+                  fontWeight: 600,
+                  textDecoration: 'underline',
+                  fontSize: '0.95rem',
+                }}
+              >
+                {project.primaryService.title} <ArrowRight size={16} />
+              </Link>
+            </div>
+          ) : null}
+
+          {/* Related Projects */}
+          {(() => {
+            if (!project.primaryService?.href) return null;
+
+            const relatedProjects = PORTFOLIO_PROJECTS.filter(
+              (p) =>
+                p.slug !== project.slug &&
+                p.hasLiveDomain &&
+                p.primaryService?.href === project.primaryService.href
+            ).slice(0, 3);
+
+            if (relatedProjects.length === 0) return null;
+
+            return (
+              <section style={{ margin: '3.5rem 0' }}>
+                <h2>Related Projects</h2>
+                <p>
+                  Explore other client builds delivered under our {project.primaryService.title} practice:
+                </p>
+                <div className={serviceStyles.gridCards}>
+                  {relatedProjects.map((rel) => (
+                    <div key={rel.slug} className={serviceStyles.card}>
+                      {rel.img && (
+                        <div
+                          style={{
+                            position: 'relative',
+                            width: '100%',
+                            aspectRatio: '16/9',
+                            borderRadius: '8px',
+                            overflow: 'hidden',
+                            marginBottom: '1rem',
+                            background: '#f0f0f0',
+                          }}
+                        >
+                          <Link href={`/work/${rel.slug}`}>
+                            <Image
+                              src={rel.img}
+                              alt={rel.imgAlt || `${rel.name} Showcase`}
+                              fill
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              style={{ objectFit: 'cover' }}
+                            />
+                          </Link>
+                        </div>
+                      )}
+                      <h4>
+                        <Link href={`/work/${rel.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                          {rel.name}
+                        </Link>
+                      </h4>
+                      <p style={{ margin: '0.25rem 0 1rem', fontSize: '0.95rem', color: '#666' }}>
+                        <strong>Industry:</strong> {rel.industry}
+                      </p>
+                      <Link
+                        href={`/work/${rel.slug}`}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.35rem',
+                          color: '#111',
+                          fontWeight: 600,
+                          textDecoration: 'underline',
+                          fontSize: '0.925rem',
+                        }}
+                      >
+                        View {rel.name} Case Study <ArrowRight size={14} />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          })()}
 
           <div className={serviceStyles.ctaRow} style={{ marginTop: '2.5rem', borderTop: '1px solid #eaeaea', paddingTop: '2.5rem' }}>
             <Link href="/contact" className={serviceStyles.primaryCta}>
