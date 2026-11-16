@@ -3,8 +3,18 @@ import path from 'path';
 
 const SITEMAP_PATH = path.resolve(process.cwd(), 'public/sitemap.xml');
 const ROBOTS_PATH = path.resolve(process.cwd(), 'public/robots.txt');
-const BASE_ORIGIN = 'http://localhost:3005';
+const BASE_ORIGIN = process.env.BASE_ORIGIN || (process.env.PORT ? `http://localhost:${process.env.PORT}` : 'http://localhost:3005');
 const PRODUCTION_ORIGIN = 'https://www.bizdevelopment.in';
+
+function decodeHtml(str) {
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/g, "'");
+}
 
 async function verifyAll() {
   console.log('🔍 Starting comprehensive SEO & URL audit against production build...\n');
@@ -61,11 +71,11 @@ async function verifyAll() {
 
       // Check Title
       const titleMatch = html.match(/<title[^>]*>([^<]*)<\/title>/i);
-      const title = titleMatch ? titleMatch[1].trim() : '';
+      const title = decodeHtml(titleMatch ? titleMatch[1].trim() : '');
 
       // Check Description
       const descMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']*)["']/i);
-      const description = descMatch ? descMatch[1].trim() : '';
+      const description = decodeHtml(descMatch ? descMatch[1].trim() : '');
 
       // Check H1 count
       const h1Matches = html.match(/<h1[\s>]/gi) || [];
@@ -203,10 +213,55 @@ async function verifyAll() {
   }
 
   if (duplicateTitles === 0 && duplicateDescriptions === 0) {
-    console.log('✅ All titles and meta descriptions are 100% UNIQUE across all sitemap pages.');
+    console.log('✅ All titles and meta descriptions are 100% UNIQUE across all sitemap pages.\n');
   }
 
-  if (allPassed && duplicateTitles === 0) {
+  // 5. Case Study Title & Meta Description Audit (Length & Uniqueness)
+  console.log('📚 Case Study Title & Meta Description Audit:');
+  const caseStudies = results.filter((r) => r.path.startsWith('/work/'));
+  let caseStudiesPassed = true;
+  const caseStudyTitles = new Map();
+
+  for (const cs of caseStudies) {
+    const titleLen = cs.title.length;
+    const descLen = cs.description.length;
+    const tOk = titleLen >= 50 && titleLen <= 60;
+    const dOk = descLen >= 140 && descLen <= 160;
+
+    if (!tOk || !dOk) {
+      caseStudiesPassed = false;
+      allPassed = false;
+    }
+
+    if (caseStudyTitles.has(cs.title)) {
+      caseStudyTitles.get(cs.title).push(cs.url);
+    } else {
+      caseStudyTitles.set(cs.title, [cs.url]);
+    }
+
+    console.log(
+      `  - ${cs.path.padEnd(25)} Title: ${String(titleLen).padStart(2)} chars [${tOk ? '✅ PASS' : '❌ FAIL'}] | ` +
+      `Desc: ${String(descLen).padStart(3)} chars [${dOk ? '✅ PASS' : '❌ FAIL'}]`
+    );
+  }
+
+  let duplicateCaseStudyTitles = 0;
+  for (const [t, list] of caseStudyTitles.entries()) {
+    if (list.length > 1) {
+      duplicateCaseStudyTitles++;
+      caseStudiesPassed = false;
+      allPassed = false;
+      console.warn(`  ❌ Duplicate case study title found: "${t}" across ${list.join(', ')}`);
+    }
+  }
+
+  if (caseStudies.length > 0 && duplicateCaseStudyTitles === 0 && caseStudiesPassed) {
+    console.log(`\n  ✅ All ${caseStudies.length} case study titles (50-60 chars) and meta descriptions (140-160 chars) are 100% compliant and unique.`);
+  } else if (caseStudies.length > 0) {
+    console.warn(`\n  ⚠️ Some case studies failed title/description length or uniqueness checks.`);
+  }
+
+  if (allPassed && duplicateTitles === 0 && caseStudiesPassed) {
     console.log('\n🎉 ALL SITEMAP VERIFICATION CHECKS PASSED PERFECTLY!');
   } else {
     console.log('\n⚠️ Some verification checks require attention.');

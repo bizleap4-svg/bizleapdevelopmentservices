@@ -1,17 +1,15 @@
 import React from 'react';
 import {
   SITE_URL,
-  SITE_NAME,
   LEGAL_NAME,
-  BRAND_NAME,
   ALT_BRAND_NAME,
   WEBSITE_NAME,
-  CONTACT_PHONE_CLEAN,
-  CONTACT_PHONE,
+  CONTACT_PHONE_ALT_CLEAN,
   CONTACT_EMAIL,
   ADDRESS,
   GEO,
   SOCIAL_LINKS,
+  GBP_URL,
 } from '@/config/site';
 
 export default function GlobalSchema() {
@@ -39,10 +37,11 @@ export default function GlobalSchema() {
         sameAs: [
           SOCIAL_LINKS.instagram,
           SOCIAL_LINKS.linkedin,
+          ...(GBP_URL ? [GBP_URL] : []),
         ],
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: CONTACT_PHONE_CLEAN,
+          telephone: CONTACT_PHONE_ALT_CLEAN,
           contactType: 'sales and customer support',
           email: CONTACT_EMAIL,
           areaServed: ['IN', 'Nagpur', 'Maharashtra'],
@@ -68,7 +67,7 @@ export default function GlobalSchema() {
         alternateName: ALT_BRAND_NAME,
         image: `${SITE_URL}/images/bizleap_laptop_mockup.jpg`,
         url: `${SITE_URL}/`,
-        telephone: CONTACT_PHONE_CLEAN,
+        telephone: CONTACT_PHONE_ALT_CLEAN,
         email: CONTACT_EMAIL,
         priceRange: '₹₹',
         parentOrganization: {
@@ -79,6 +78,7 @@ export default function GlobalSchema() {
         sameAs: [
           SOCIAL_LINKS.instagram,
           SOCIAL_LINKS.linkedin,
+          ...(GBP_URL ? [GBP_URL] : []),
         ],
         address: {
           '@type': 'PostalAddress',

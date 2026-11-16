@@ -2,209 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.bizdevelopment.in</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/services</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/about</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/contact</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/services/website-development-nagpur</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/services/ecommerce-website-development-nagpur</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/services/mobile-app-development-nagpur</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/services/ui-ux-design-nagpur</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/services/nextjs-development</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/miraya</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/suko</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/rajwadi</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/asma</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/binous</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/shutter-school</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/chemora</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/urban-taxi</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/art-interiorz</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/mysa</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/wealth-acumen</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/oswal-jewellers</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/taubys</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://www.bizdevelopment.in/work/mmm-hotels</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
 </urlset>
-Improve branded-search SEO for https://www.bizdevelopment.in so the website can compete for these searches:
-
-Primary: bizdevelopment
-Secondary: biz development, bizdevelopment nagpur, bizleap development
-
-Context:
-- The public-facing brand is currently “Bizleap Development”.
-- The domain is bizdevelopment.in.
-- Google Search Console confirms that the homepage and website-development service page are indexed.
-- Their Google-selected canonicals match their declared canonicals.
-- Google has detected the sitemap.
-- Older validation reports still show some historical exclusions. Do not treat these as proof of current technical errors.
-
-Goal:
-Make the relationship between “BizDevelopment”, the domain, and “Bizleap Development” clear to users and search engines, without keyword stuffing, misleading rebranding, or damaging existing service-keyword relevance.
-
-First inspect the codebase and existing metadata, visible branding, structured data, redirects, and internal links. Then implement only necessary changes.
-
-1. HOMEPAGE BRAND RELEVANCE
-
-Use this homepage title:
-“BizDevelopment | Website & App Development in Nagpur”
-
-Use this meta description:
-“BizDevelopment is the website and app development arm of Bizleap in Nagpur. Explore custom websites, e-commerce stores, mobile apps and our project portfolio.”
-
-Verify that the business relationship is accurate before publishing that description. If the repository does not establish it, flag it for confirmation instead of inventing a relationship.
-
-Add a concise, visible brand introduction near the hero:
-“BizDevelopment by Bizleap”
-
-Keep the existing service-focused H1 if it accurately describes the offering. Do not replace useful service content with repeated brand keywords.
-
-Explain naturally in the homepage or About introduction that BizDevelopment is the name used for this development website, currently presented as Bizleap Development. Use wording consistent with the actual business identity.
-
-Preserve the existing logo and overall design. Integrate the brand introduction cleanly.
-
-2. CONSISTENT WEBSITE IDENTITY
-
-Align the homepage title, visible introduction, Open Graph site name, social metadata, and footer website name around “BizDevelopment”, while preserving the relationship to Bizleap.
-
-Do not globally replace the legal organization name with BizDevelopment.
-Do not invent a new company, address, office, or Google Business Profile.
-Keep individual service-page titles focused on their actual services.
-
-3. STRUCTURED DATA
-
-Inspect and update the existing JSON-LD instead of adding duplicate entities.
-
-For the homepage WebSite entity:
-- name: “BizDevelopment”
-- alternateName: “Bizleap Development”
-- url: “https://www.bizdevelopment.in/”
-
-Use stable @id references and connect WebSite to the correct existing Organization.
-
-Preserve verified legal business details.
-Only use sameAs for profiles that genuinely represent the same entity.
-Do not use sameAs merely to describe a parent company relationship.
-Do not invent reviews, ratings, awards, or other claims.
-
-Ensure structured data agrees with visible page content.
-Structured data is not a ranking guarantee.
-
-4. PRESERVE TECHNICAL SEO
-
-Keep existing working URLs and self-referencing canonicals.
-Audit HTTP/HTTPS and www/non-www redirects. Only fix inconsistencies if found, using permanent redirects without loops or unnecessary chains.
-
-Keep the sitemap limited to canonical, indexable URLs returning 200.
-Do not change lastmod dates unless the corresponding page meaningfully changes.
-Preserve robots.txt crawl access.
-Do not add noindex to important pages.
-
-Check that important content is present in server-rendered HTML and remains accessible if animation or hydration fails. Fix any whole-page opacity:0 dependency that could leave the content invisible, while preserving the intended design.
-
-Do not introduce hidden keyword text, doorway pages, or a separate near-duplicate “bizdevelopment” landing page.
-
-5. INTERNAL LINKS AND CONTENT
-
-Ensure homepage, About, Services, and relevant portfolio pages are linked through normal crawlable links.
-
-Use the brand name naturally in appropriate homepage links.
-Use descriptive service names for service links.
-Avoid repeating exact-match anchor text excessively.
-
-Improve generic portfolio content only using verified project facts available in the repository. Flag missing facts instead of inventing results, technologies, or performance claims.
-
-6. VALIDATION AND HANDOFF
-
-Run the production build and check:
-- No duplicate or conflicting titles, canonicals, or structured-data entities.
-- Homepage metadata and brand introduction appear in rendered HTML.
-- Important pages remain indexable.
-- Desktop and mobile layouts remain intact.
-- Existing navigation and redirects work.
-
-Provide:
-- Files changed and why.
-- Final homepage title, description, and visible brand copy.
-- Technical issues actually found and fixed.
-- Any business claims requiring confirmation.
-- A short manual checklist for Search Console and external brand profiles.
-
-For external actions, recommend:
-- A clearly labelled “BizDevelopment by Bizleap” link from the relevant section of bizleap.in.
-- Consistent mentions and links on relevant existing company profiles.
-- Tracking “bizdevelopment”, “biz development”, and “bizleap development” separately in Search Console.
-
-Do not create fake backlinks, duplicate business listings, or promise a ranking position or deadline.
-Do not deploy until I review the changes.

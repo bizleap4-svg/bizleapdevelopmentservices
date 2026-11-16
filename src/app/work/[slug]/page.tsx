@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
-import { PORTFOLIO_PROJECTS } from '@/data/portfolio';
+import { PORTFOLIO_PROJECTS, PortfolioProject } from '@/data/portfolio';
 import { SITE_URL, SITE_NAME, BRAND_NAME } from '@/config/site';
-import { ArrowUpRight, ArrowLeft, Layers, Building2, Briefcase, ExternalLink, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Layers, Building2, Briefcase, ExternalLink, ArrowRight } from 'lucide-react';
 import serviceStyles from '../../services/service-page.module.css';
 
 interface CaseStudyPageProps {
@@ -20,6 +20,92 @@ export async function generateStaticParams() {
   }));
 }
 
+export function getCaseStudyTitle(project: PortfolioProject): string {
+  switch (project.slug) {
+    case 'miraya':
+      return 'MIRAYA | E-Commerce Website for Fashion | BizDevelopment';
+    case 'suko':
+      return 'SUKO | E-Commerce Store for Corporate Wear | BizDevelopment';
+    case 'rajwadi':
+      return 'Rajwadi | E-Commerce Store for Ethnic Wear | BizDevelopment';
+    case 'asma':
+      return 'ASMA | Website Development for Education | BizDevelopment';
+    case 'binous':
+      return 'BINOUS | Next.js Website for Fitness Gym | BizDevelopment';
+    case 'shutter-school':
+      return 'Shutter School | EdTech Platform for Media | BizDevelopment';
+    case 'chemora':
+      return 'Chemora | Corporate Website for Chemicals | BizDevelopment';
+    case 'urban-taxi':
+      return 'URBAN TAXI | Web App for Fleet Logistics | BizDevelopment';
+    case 'art-interiorz':
+      return 'Art Interiorz | UI/UX Design for Interiors | BizDevelopment';
+    case 'mysa':
+      return 'MYSA | UI/UX Design for Luxury Fashion | BizDevelopment';
+    case 'wealth-acumen':
+      return 'Wealth Acumen | Website for Wealth Advisory | BizDevelopment';
+    case 'oswal-jewellers':
+      return 'Oswal Jewellers | E-Commerce for Jewellery | BizDevelopment';
+    case 'taubys':
+      return 'Taubys | E-Commerce Website for Bakeries | BizDevelopment';
+    case 'mmm-hotels':
+      return 'MMM Hotels | Website Development for Hotels | BizDevelopment';
+    case 'miles-along-smiles':
+      return 'Miles Along Smiles | Web App for Clinics | BizDevelopment';
+    case 'form-6':
+      return 'Form 6 | Web Platform for Pharma Solutions | BizDevelopment';
+    case 'genekon':
+      return 'Genekon | Web Portal for Health Diagnostics | BizDevelopment';
+    default: {
+      const fallback = `${project.name} | ${project.category} | BizDevelopment`;
+      return fallback.length >= 50 && fallback.length <= 60
+        ? fallback
+        : `${project.name} Case Study | Bizleap Development`;
+    }
+  }
+}
+
+export function getCaseStudyDescription(project: PortfolioProject): string {
+  switch (project.slug) {
+    case 'miraya':
+      return 'Explore the MIRAYA case study: high-conversion fashion e-commerce storefront with fluid showcases, responsive design, and checkout by BizDevelopment.';
+    case 'suko':
+      return 'Case study for SUKO (Corporate Apparel and Uniforms). Scalable Next.js e-commerce architecture and image delivery engineered by BizDevelopment in Nagpur.';
+    case 'rajwadi':
+      return 'Case study for Rajwadi (Ethnic Wear and Traditional Apparel). High-performance e-commerce platform, checkout flows, and mobile UI by BizDevelopment.';
+    case 'asma':
+      return 'Case study for ASMA (Professional Education and Training). Modern modular web presence, academic curriculum showcase, and inquiry funnels by BizDevelopment.';
+    case 'binous':
+      return 'Case study for BINOUS (Fitness, Training and Nutrition). High-energy fitness web platform with Stripe payment integration engineered by BizDevelopment.';
+    case 'shutter-school':
+      return 'Case study for Shutter School (Creative Education and Media Arts). Ed-tech learning portal with video streaming integration engineered by BizDevelopment.';
+    case 'chemora':
+      return 'Case study for Chemora (Chemical Formulations and Life Sciences). Clean corporate web portal showcasing life sciences solutions by BizDevelopment.';
+    case 'urban-taxi':
+      return 'Case study for URBAN TAXI (Transport, Mobility and Fleet Logistics). Fleet logistics web application with route inquiry forms by BizDevelopment in Nagpur.';
+    case 'art-interiorz':
+      return 'Case study for Art Interiorz (Architectural and Interior Design). Visually driven portfolio showcasing residential transformations by BizDevelopment.';
+    case 'mysa':
+      return 'Case study for MYSA (Haute Couture and Luxury Fashion). Premium digital storefront and bespoke interaction design engineered by BizDevelopment in Nagpur.';
+    case 'wealth-acumen':
+      return 'Case study for Wealth Acumen (Wealth Management). Secure financial services web platform and confidential consultation booking by BizDevelopment in Nagpur.';
+    case 'oswal-jewellers':
+      return 'Case study for Oswal Jewellers (Fine Jewellery Retail). Opulent fine jewellery e-commerce catalogue and quote request system by BizDevelopment in Nagpur.';
+    case 'taubys':
+      return 'Case study for Taubys (Artisanal Bakery and Dining). Food ordering and bakery e-commerce experience with visual menus and scheduling by BizDevelopment.';
+    case 'mmm-hotels':
+      return 'Case study for MMM Hotels (Hospitality and Luxury Hotels). Conversion-oriented hotel web platform with room gallery tours and booking by BizDevelopment.';
+    case 'miles-along-smiles':
+      return 'Case study for Miles Along Smiles (Healthcare and Dental Care). Interactive clinic web application with automated booking workflows by BizDevelopment.';
+    case 'form-6':
+      return 'Case study for Form 6 (Pharmaceutical Documentation and Compliance). Corporate web platform highlighting B2B partner solutions by BizDevelopment.';
+    case 'genekon':
+      return 'Case study for Genekon (Diagnostic Healthcare and Genetics). Healthcare web portal with clinical clarity, fast loads, and inquiry handling by BizDevelopment.';
+    default:
+      return `Case study for ${project.name} (${project.industry}). Explore the engineering architecture, tech stack, and deployment by Bizleap Development in Nagpur.`;
+  }
+}
+
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = PORTFOLIO_PROJECTS.find((p) => p.slug === slug);
@@ -30,8 +116,8 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
     };
   }
 
-  const title = `${project.name} Case Study | Bizleap Development`;
-  const description = `Case study for ${project.name} (${project.industry}). Explore the engineering architecture, tech stack, and deployment by Bizleap Development in Nagpur.`;
+  const title = getCaseStudyTitle(project);
+  const description = getCaseStudyDescription(project);
 
   return {
     title,
@@ -77,7 +163,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     '@id': `${SITE_URL}/work/${project.slug}#project`,
     name: `${project.name} - ${project.industry}`,
     headline: `${project.name} Case Study`,
-    description: project.solution,
+    description: project.solution || project.desc,
     image: `${SITE_URL}${project.img}`,
     dateModified: project.lastMod,
     creator: {
@@ -203,11 +289,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
 
         <article className={serviceStyles.bodyContent}>
-          {/* What Was Built */}
-          <h2>Platform Overview &amp; Engineering Scope</h2>
-          <p>
-            {project.solution}
-          </p>
+          {/* What Was Built - Render ONLY if provided */}
+          {project.solution ? (
+            <>
+              <h2>Platform Overview &amp; Engineering Scope</h2>
+              <p>{project.solution}</p>
+            </>
+          ) : null}
 
           {/* Render Challenge ONLY if real data is provided */}
           {project.challenge ? (
@@ -217,25 +305,63 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </>
           ) : null}
 
-          {/* Technology Stack & Architecture */}
-          <h2>Technology Stack &amp; Implementation</h2>
-          <p>
-            Architected and deployed using production-tested frameworks to guarantee Core Web Vitals compliance, security, and responsive performance:
-          </p>
-          <div className={serviceStyles.gridCards}>
-            {project.stack.map((item, idx) => (
-              <div key={idx} className={serviceStyles.card} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1.25rem' }}>
-                <Layers size={20} color="var(--accent-yellow, #E5B82E)" style={{ flexShrink: 0 }} />
-                <span style={{ fontWeight: 600, color: '#111', fontSize: '1rem' }}>{item}</span>
-              </div>
-            ))}
-          </div>
+          {/* Technology Stack & Architecture - Render ONLY if provided */}
+          {(() => {
+            const stackItems = project.techStack && project.techStack.length > 0 ? project.techStack : project.stack;
+            if (!stackItems || stackItems.length === 0) return null;
+            return (
+              <>
+                <h2>Technology Stack &amp; Implementation</h2>
+                <p>
+                  Architected and deployed using production-tested frameworks to guarantee Core Web Vitals compliance, security, and responsive performance:
+                </p>
+                <div className={serviceStyles.gridCards}>
+                  {stackItems.map((item, idx) => (
+                    <div key={idx} className={serviceStyles.card} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1.25rem' }}>
+                      <Layers size={20} color="var(--accent-yellow, #E5B82E)" style={{ flexShrink: 0 }} />
+                      <span style={{ fontWeight: 600, color: '#111', fontSize: '1rem' }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
 
           {/* Render Results ONLY if real data is provided */}
           {project.results ? (
             <>
               <h2>Business Outcomes &amp; Performance Metrics</h2>
               <p>{project.results}</p>
+            </>
+          ) : null}
+
+          {/* Render Testimonial ONLY if real data is provided */}
+          {project.testimonial ? (
+            <>
+              <h2>Client Feedback</h2>
+              <div
+                className={serviceStyles.card}
+                style={{
+                  margin: '2rem 0',
+                  padding: '1.75rem',
+                  background: '#fafafa',
+                  borderLeft: '4px solid var(--accent-yellow, #E5B82E)',
+                }}
+              >
+                <blockquote style={{ margin: 0 }}>
+                  <p style={{ fontStyle: 'italic', fontSize: '1.05rem', color: '#222', marginBottom: '1rem', lineHeight: 1.7 }}>
+                    &ldquo;{project.testimonial.quote}&rdquo;
+                  </p>
+                  <footer>
+                    <strong style={{ display: 'block', color: '#111', fontSize: '1rem' }}>
+                      {project.testimonial.author}
+                    </strong>
+                    <span style={{ fontSize: '0.875rem', color: '#666' }}>
+                      {project.testimonial.role}
+                    </span>
+                  </footer>
+                </blockquote>
+              </div>
             </>
           ) : null}
 

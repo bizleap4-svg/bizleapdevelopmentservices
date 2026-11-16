@@ -1,3 +1,9 @@
+export interface PortfolioTestimonial {
+  quote: string;
+  author: string;
+  role: string;
+}
+
 export interface PortfolioProject {
   slug: string;
   name: string;
@@ -15,9 +21,11 @@ export interface PortfolioProject {
     href: string;
   };
   challenge?: string;
-  solution: string;
+  solution?: string;
   stack: string[];
+  techStack?: string[];
   results?: string;
+  testimonial?: PortfolioTestimonial;
   lastMod: string;
 }
 

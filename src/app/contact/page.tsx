@@ -53,7 +53,7 @@ export default function ContactPage() {
       name: SITE_NAME,
       legalName: LEGAL_NAME,
       url: `${SITE_URL}/`,
-      telephone: CONTACT_PHONE_CLEAN,
+      telephone: CONTACT_PHONE_ALT_CLEAN,
       email: CONTACT_EMAIL,
       address: {
         '@type': 'PostalAddress',

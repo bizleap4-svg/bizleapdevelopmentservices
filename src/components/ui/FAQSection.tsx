@@ -123,9 +123,9 @@ export default function FAQSection({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'FAQPage',
-              'mainEntity': faqs.map((f, idx) => ({
+              'mainEntity': faqs.map((f) => ({
                 '@type': 'Question',
-                'name': f.question.match(/^\d+\.\s/) ? f.question : `${idx + 1}. ${f.question}`,
+                'name': f.question.replace(/^\d+\.\s*/, '').trim(),
                 'acceptedAnswer': {
                   '@type': 'Answer',
                   'text': f.answer,
