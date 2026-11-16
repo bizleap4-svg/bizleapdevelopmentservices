@@ -31,7 +31,7 @@ export function getCaseStudyTitle(project: PortfolioProject): string {
     case 'asma':
       return 'ASMA | Website Development for Education | BizDevelopment';
     case 'binous':
-      return 'BINOUS | Next.js Website for Fitness Gym | BizDevelopment';
+      return 'BINOUS | Embedded Systems and Robotics | BizDevelopment';
     case 'shutter-school':
       return 'Shutter School | EdTech Platform for Media | BizDevelopment';
     case 'chemora':
@@ -53,7 +53,7 @@ export function getCaseStudyTitle(project: PortfolioProject): string {
     case 'miles-along-smiles':
       return 'Miles Along Smiles | Web App for Clinics | BizDevelopment';
     case 'form-6':
-      return 'Form 6 | Web Platform for Pharma Solutions | BizDevelopment';
+      return 'Form 6 | Superfood Nutrition Platform | BizDevelopment';
     case 'genekon':
       return 'Genekon | Pharmacy and Wholesale Commerce | BizDevelopment';
     default: {
@@ -76,7 +76,7 @@ export function getCaseStudyDescription(project: PortfolioProject): string {
     case 'asma':
       return 'Case study for ASMA (Professional Education). Educational website with course curriculum pages, gallery, and student inquiry funnels by BizDevelopment.';
     case 'binous':
-      return 'Case study for BINOUS (Fitness, Training and Nutrition). High-energy fitness web platform with Stripe payment integration engineered by BizDevelopment.';
+      return 'Case study for BINOUS (Robotics and Technology Education). Embedded systems and hardware lab web platform with dynamic course catalogs by BizDevelopment.';
     case 'shutter-school':
       return 'Case study for Shutter School (Creative Education and Media Arts). Ed-tech learning portal with video streaming integration engineered by BizDevelopment.';
     case 'chemora':
@@ -98,7 +98,7 @@ export function getCaseStudyDescription(project: PortfolioProject): string {
     case 'miles-along-smiles':
       return 'Case study for Miles Along Smiles (Healthcare and Dental Care). Interactive clinic web application with automated booking workflows by BizDevelopment.';
     case 'form-6':
-      return 'Case study for Form 6 (Pharmaceutical Documentation and Compliance). Corporate web platform highlighting B2B partner solutions by BizDevelopment.';
+      return 'Case study for Form 6 (Superfood and Dietary Nutrition). Web platform featuring product bundles, wellness guides, and subscription orders by BizDevelopment.';
     case 'genekon':
       return 'Case study for Genekon (Online Pharmacy and Wholesale E-Commerce). Web platform with prescription upload, catalog, and Razorpay checkout by BizDevelopment.';
     default:
