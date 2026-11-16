@@ -10,8 +10,6 @@ import {
   LEGAL_NAME,
   CONTACT_PHONE,
   CONTACT_PHONE_CLEAN,
-  CONTACT_PHONE_ALT,
-  CONTACT_PHONE_ALT_CLEAN,
   CONTACT_EMAIL,
   ADDRESS,
 } from '@/config/site';
@@ -107,15 +105,11 @@ export default function ContactPage() {
 
               <div>
                 <strong style={{ display: 'block', fontSize: '0.85rem', color: '#666', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.35rem' }}>
-                  Direct Phone Lines
+                  Direct Phone Line
                 </strong>
                 <p style={{ margin: 0, fontSize: '1.05rem', lineHeight: 1.6 }}>
                   <a href={`tel:${CONTACT_PHONE_CLEAN}`} style={{ color: '#111', textDecoration: 'none', fontWeight: 600 }}>
                     {CONTACT_PHONE}
-                  </a>
-                  <span style={{ color: '#999', margin: '0 0.5rem' }}>/</span>
-                  <a href={`tel:${CONTACT_PHONE_ALT_CLEAN}`} style={{ color: '#111', textDecoration: 'none', fontWeight: 600 }}>
-                    {CONTACT_PHONE_ALT}
                   </a>
                 </p>
               </div>

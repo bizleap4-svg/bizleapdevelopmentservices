@@ -8,10 +8,8 @@ export const BRAND_SUBTITLE = 'by Bizleap';
 export const ALT_BRAND_NAME = 'Bizleap Development';
 export const LEGAL_NAME = 'BizLeap India Pvt. Ltd.';
 
-export const CONTACT_PHONE = '+91 70970 95152';
-export const CONTACT_PHONE_CLEAN = '+917097095152';
-export const CONTACT_PHONE_ALT = '+91 93071 98119';
-export const CONTACT_PHONE_ALT_CLEAN = '+919307198119';
+export const CONTACT_PHONE = '+91 93071 98119';
+export const CONTACT_PHONE_CLEAN = '+919307198119';
 export const CONTACT_EMAIL = 'bizleapinc@gmail.com';
 
 export const ADDRESS = {
