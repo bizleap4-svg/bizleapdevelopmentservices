@@ -7,7 +7,7 @@ import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import { PORTFOLIO_PROJECTS, PortfolioProject } from '@/data/portfolio';
 import { SITE_URL, SITE_NAME, BRAND_NAME } from '@/config/site';
-import { ArrowUpRight, ArrowLeft, Layers, Building2, Briefcase, ExternalLink, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Layers, Building2, Briefcase, ExternalLink, ArrowRight } from 'lucide-react';
 import serviceStyles from '../../services/service-page.module.css';
 
 interface CaseStudyPageProps {
