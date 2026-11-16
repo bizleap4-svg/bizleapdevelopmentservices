@@ -81,6 +81,9 @@ async function verifyAll() {
       const h1Matches = html.match(/<h1[\s>]/gi) || [];
       const h1Count = h1Matches.length;
 
+      // Extract all <a> hrefs
+      const linkMatches = [...html.matchAll(/<a[^>]*href=["']([^"']*)["']/gi)].map((m) => m[1]);
+
       // Duplicate tracking
       if (titles.has(title)) {
         titles.get(title).push(fullUrl);
@@ -104,6 +107,7 @@ async function verifyAll() {
         title,
         description,
         h1Count,
+        links: linkMatches,
       });
     } catch (err) {
       results.push({
@@ -256,15 +260,117 @@ async function verifyAll() {
   }
 
   if (caseStudies.length > 0 && duplicateCaseStudyTitles === 0 && caseStudiesPassed) {
-    console.log(`\n  ✅ All ${caseStudies.length} case study titles (50-60 chars) and meta descriptions (140-160 chars) are 100% compliant and unique.`);
+    console.log(`\n  ✅ All ${caseStudies.length} case study titles (50-60 chars) and meta descriptions (140-160 chars) are 100% compliant and unique.\n`);
   } else if (caseStudies.length > 0) {
-    console.warn(`\n  ⚠️ Some case studies failed title/description length or uniqueness checks.`);
+    console.warn(`\n  ⚠️ Some case studies failed title/description length or uniqueness checks.\n`);
   }
 
-  if (allPassed && duplicateTitles === 0 && caseStudiesPassed) {
-    console.log('\n🎉 ALL SITEMAP VERIFICATION CHECKS PASSED PERFECTLY!');
+  // 6. Hierarchy Link Audit (Services <-> Case Studies)
+  console.log('🔗 Hierarchy Link Audit (Services <-> Case Studies):');
+  const { PORTFOLIO_PROJECTS } = await import('../src/data/portfolio.ts');
+
+  let hierarchyPassed = true;
+  const serviceRoutes = [
+    '/services/website-development-nagpur',
+    '/services/ecommerce-website-development-nagpur',
+    '/services/mobile-app-development-nagpur',
+    '/services/ui-ux-design-nagpur',
+    '/services/nextjs-development',
+  ];
+
+  for (const sRoute of serviceRoutes) {
+    const pageResult = results.find((r) => r.path === sRoute);
+    const mappedCases = PORTFOLIO_PROJECTS.filter(
+      (p) => p.hasLiveDomain && p.primaryService?.href === sRoute
+    );
+
+    if (!pageResult) {
+      console.warn(`  ⚠️ Service page ${sRoute} not found in crawl results.`);
+      continue;
+    }
+
+    const pageLinks = new Set(pageResult.links || []);
+    const missingCases = [];
+    for (const cs of mappedCases) {
+      const expectedHref = `/work/${cs.slug}`;
+      if (!pageLinks.has(expectedHref)) {
+        missingCases.push(expectedHref);
+      }
+    }
+
+    const ok = missingCases.length === 0;
+    if (!ok) {
+      hierarchyPassed = false;
+      allPassed = false;
+    }
+    console.log(
+      `  - Service ${sRoute.padEnd(46)} -> links to ${String(mappedCases.length).padStart(2)} mapped case studies [${ok ? '✅ PASS' : `❌ MISSING: ${missingCases.join(', ')}`}]`
+    );
+  }
+
+  // 7. Case Study -> Parent Service Backlink Audit
+  console.log('\n🔗 Case Study -> Parent Service Backlink Audit:');
+  const mappedCaseStudies = PORTFOLIO_PROJECTS.filter((p) => p.hasLiveDomain && p.primaryService?.href);
+
+  for (const cs of mappedCaseStudies) {
+    const csPath = `/work/${cs.slug}`;
+    const pageResult = results.find((r) => r.path === csPath);
+    if (!pageResult) continue;
+
+    const pageLinks = new Set(pageResult.links || []);
+    const targetService = cs.primaryService.href;
+    const hasServiceLink = pageLinks.has(targetService);
+
+    if (!hasServiceLink) {
+      hierarchyPassed = false;
+      allPassed = false;
+    }
+
+    console.log(
+      `  - Case Study ${csPath.padEnd(25)} -> links to ${targetService.padEnd(46)} [${hasServiceLink ? '✅ PASS' : '❌ FAIL'}]`
+    );
+  }
+
+  // 8. Broken Internal Links Audit (Non-Existent Routes)
+  console.log('\n🚫 Broken Internal Links Audit (Non-Existent Routes):');
+  const validRoutes = new Set([
+    ...urls.map((u) => u.replace(PRODUCTION_ORIGIN, '') || '/'),
+    '/privacy-policy',
+    '/terms-and-conditions',
+    '/cookie-policy',
+  ]);
+
+  let brokenLinksCount = 0;
+  const brokenLinksFound = [];
+
+  for (const r of results) {
+    for (const href of r.links || []) {
+      if (href.startsWith('/') && !href.startsWith('//')) {
+        const cleanPath = href.split(/[?#]/)[0] || '/';
+        if (!validRoutes.has(cleanPath)) {
+          brokenLinksCount++;
+          brokenLinksFound.push({ source: r.path, target: cleanPath });
+        }
+      }
+    }
+  }
+
+  if (brokenLinksCount === 0) {
+    console.log('  ✅ Zero broken links to non-existent routes detected across all crawled pages.\n');
   } else {
-    console.log('\n⚠️ Some verification checks require attention.');
+    hierarchyPassed = false;
+    allPassed = false;
+    console.warn(`  ❌ Found ${brokenLinksCount} links to non-existent routes:`);
+    for (const b of brokenLinksFound) {
+      console.warn(`     - On ${b.source} -> ${b.target}`);
+    }
+    console.log('');
+  }
+
+  if (allPassed && duplicateTitles === 0 && caseStudiesPassed && hierarchyPassed) {
+    console.log('🎉 ALL SITEMAP VERIFICATION CHECKS PASSED PERFECTLY!');
+  } else {
+    console.log('⚠️ Some verification checks require attention.');
   }
 }
 
