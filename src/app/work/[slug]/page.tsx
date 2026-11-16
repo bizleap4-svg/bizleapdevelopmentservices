@@ -39,7 +39,7 @@ export function getCaseStudyTitle(project: PortfolioProject): string {
     case 'urban-taxi':
       return 'URBAN TAXI | Web App for Fleet Logistics | BizDevelopment';
     case 'art-interiorz':
-      return 'Art Interiorz | Web Platform with Cost Calculator | BizDev';
+      return 'Art Interiorz | Cost Calculator Platform | BizDevelopment';
     case 'mysa':
       return 'MYSA | UI/UX Design for Luxury Fashion | BizDevelopment';
     case 'wealth-acumen':
