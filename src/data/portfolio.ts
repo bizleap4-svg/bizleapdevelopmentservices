@@ -47,8 +47,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       href: '/services/ecommerce-website-development-nagpur',
     },
     solution: 'Built an e-commerce storefront and Node.js backend for fashion apparel retail. The platform includes category collections, dynamic product pages, wishlist, cart, and Razorpay checkout. Backend services handle user accounts, transactional emails, Cloudinary asset storage, and PDF invoice generation.',
-    stack: ['Next.js', 'React', 'Tailwind CSS', 'Express', 'Prisma', 'PostgreSQL', 'Razorpay'],
-    techStack: ['Next.js', 'React', 'Tailwind CSS', 'Express', 'Prisma', 'PostgreSQL', 'Razorpay', 'Cloudinary', 'Resend'],
+    stack: ['Next.js', 'React', 'Express', 'Prisma', 'PostgreSQL', 'Razorpay'],
+    techStack: ['Next.js', 'React', 'Express', 'Prisma', 'PostgreSQL', 'Razorpay', 'Cloudinary', 'Resend'],
     lastMod: '2026-10-06',
   },
   {
