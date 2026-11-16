@@ -12,6 +12,7 @@ import {
   ADDRESS,
   GEO,
   SOCIAL_LINKS,
+  GBP_URL,
 } from '@/config/site';
 
 export default function GlobalSchema() {
@@ -39,6 +40,7 @@ export default function GlobalSchema() {
         sameAs: [
           SOCIAL_LINKS.instagram,
           SOCIAL_LINKS.linkedin,
+          ...(GBP_URL ? [GBP_URL] : []),
         ],
         contactPoint: {
           '@type': 'ContactPoint',
@@ -79,6 +81,7 @@ export default function GlobalSchema() {
         sameAs: [
           SOCIAL_LINKS.instagram,
           SOCIAL_LINKS.linkedin,
+          ...(GBP_URL ? [GBP_URL] : []),
         ],
         address: {
           '@type': 'PostalAddress',

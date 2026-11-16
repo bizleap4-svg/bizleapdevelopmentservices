@@ -20,10 +20,14 @@ export const ADDRESS = {
   addressCountry: 'IN',
 };
 
+// Note: Must match the Google Business Profile pin for 2 Wardha Rd, Sawarkar Nagar
 export const GEO = {
   latitude: '21.107778',
   longitude: '79.055833',
 };
+
+// TODO(GBP_URL): Add Google Business Profile link once verified, and include in schema sameAs
+export const GBP_URL = '';
 
 export const SOCIAL_LINKS = {
   marketingPartner: 'https://www.bizleap.in',
