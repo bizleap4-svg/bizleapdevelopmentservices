@@ -61,3 +61,4 @@ export function generateSitemapXml() {
 const xml = generateSitemapXml();
 fs.writeFileSync(SITEMAP_PATH, xml, 'utf8');
 console.log(`✅ Successfully generated ${SITEMAP_PATH} with ${SITEMAP_ENTRIES.length} URLs.`);
+
