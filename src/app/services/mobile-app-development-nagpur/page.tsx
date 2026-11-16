@@ -6,7 +6,7 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FAQSection, { FAQ } from '@/components/ui/FAQSection';
 import ProjectsWeBuilt from '@/components/services/ProjectsWeBuilt';
 import { SITE_URL, SITE_NAME, BRAND_NAME, SOCIAL_LINKS } from '@/config/site';
-import { ArrowRight, Smartphone, Code2, Zap, Lock, Bell, BarChart3, Cloud, ShieldCheck } from 'lucide-react';
+import { Smartphone, Code2, Zap, Lock, Bell, BarChart3, Cloud, ShieldCheck } from 'lucide-react';
 import styles from '../service-page.module.css';
 
 export const metadata: Metadata = {

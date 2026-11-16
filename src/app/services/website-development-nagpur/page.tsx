@@ -7,7 +7,7 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FAQSection, { FAQ } from '@/components/ui/FAQSection';
 import ProjectsWeBuilt from '@/components/services/ProjectsWeBuilt';
 import { SITE_URL, SITE_NAME, BRAND_NAME, SOCIAL_LINKS } from '@/config/site';
-import { ArrowRight, CheckCircle2, Code2, Database, Shield, Zap, Layers, Server, Globe } from 'lucide-react';
+import { CheckCircle2, Code2, Database, Shield, Zap, Layers, Server, Globe } from 'lucide-react';
 import styles from '../service-page.module.css';
 
 export const metadata: Metadata = {
