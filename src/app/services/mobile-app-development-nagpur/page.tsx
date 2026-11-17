@@ -4,8 +4,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FAQSection, { FAQ } from '@/components/ui/FAQSection';
+import ProjectsWeBuilt from '@/components/services/ProjectsWeBuilt';
 import { SITE_URL, SITE_NAME, BRAND_NAME, SOCIAL_LINKS } from '@/config/site';
-import { ArrowRight, Smartphone, Code2, Zap, Lock, Bell, BarChart3, Cloud, ShieldCheck } from 'lucide-react';
+import { Smartphone, Code2, Zap, Lock, Bell, BarChart3, Cloud, ShieldCheck } from 'lucide-react';
 import styles from '../service-page.module.css';
 
 export const metadata: Metadata = {
@@ -199,33 +200,7 @@ export default function MobileAppDevelopmentNagpurPage() {
             <li><strong>Stage 5 — Store Submission &amp; Post-Launch Warranty:</strong> Managing store metadata, privacy policy disclosures, security compliance reviews, and launch monitoring.</li>
           </ul>
 
-          <h2>Selected Mobility &amp; Web App Builds by Our Studio</h2>
-          <p>
-            Explore real applications engineered and deployed by Bizleap Development:
-          </p>
-          <div className={styles.gridCards}>
-            <div className={styles.card}>
-              <h4>URBAN TAXI</h4>
-              <p><strong>Fleet &amp; Mobility Logistics:</strong> Interactive fleet booking and route dispatch web application engineered with real-time route calculators.</p>
-              <Link href="/work/urban-taxi" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View URBAN TAXI Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>BINOUS Gym &amp; Lab</h4>
-              <p><strong>Fitness &amp; Lifestyle App:</strong> High-energy lifestyle commerce platform integrated with Stripe for frictionless member subscription workflows.</p>
-              <Link href="/work/binous" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View BINOUS Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>Taubys</h4>
-              <p><strong>Food Delivery &amp; Ordering:</strong> Mobile-optimized food ordering interface with instant checkout flows and direct fulfillment dispatch.</p>
-              <Link href="/work/taubys" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View Taubys Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
+          <ProjectsWeBuilt serviceHref="/services/mobile-app-development-nagpur" />
 
           <h2>Explore Related Software Engineering Disciplines</h2>
           <p>

@@ -4,8 +4,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FAQSection, { FAQ } from '@/components/ui/FAQSection';
+import ProjectsWeBuilt from '@/components/services/ProjectsWeBuilt';
 import { SITE_URL, SITE_NAME, BRAND_NAME, SOCIAL_LINKS } from '@/config/site';
-import { ArrowRight, Code2, Server, Zap, Shield, Database, Cloud, RefreshCw, Cpu } from 'lucide-react';
+import { Code2, Server, Zap, Shield, Database, Cloud, RefreshCw, Cpu } from 'lucide-react';
 import styles from '../service-page.module.css';
 
 export const metadata: Metadata = {
@@ -199,33 +200,7 @@ export default function NextJsDevelopmentPage() {
             <li><strong>Stage 5 — Production Cloud Deployment:</strong> Configuring custom domain DNS, SSL certificates, edge cache revalidation hooks, and error tracking via Sentry.</li>
           </ul>
 
-          <h2>Selected Next.js Platforms Built by Bizleap Development</h2>
-          <p>
-            Review production Next.js applications engineered and deployed by our team:
-          </p>
-          <div className={styles.gridCards}>
-            <div className={styles.card}>
-              <h4>MIRAYA</h4>
-              <p><strong>Next.js Fashion Commerce:</strong> High-performance e-commerce architecture built with Next.js App Router, CSS Modules, and fluid collection showcases.</p>
-              <Link href="/work/miraya" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View MIRAYA Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>BINOUS Gym &amp; Lab</h4>
-              <p><strong>Next.js Membership Platform:</strong> High-energy lifestyle web application with Stripe payments, dynamic tier billing, and international subscription flows.</p>
-              <Link href="/work/binous" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View BINOUS Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>ASMA Training Institute</h4>
-              <p><strong>Next.js Educational Portal:</strong> Fast academic web platform with modular curriculum displays, faculty portfolios, and digital admission inquiry funnels.</p>
-              <Link href="/work/asma" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View ASMA Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
+          <ProjectsWeBuilt serviceHref="/services/nextjs-development" />
 
           <h2>Explore Related Engineering Disciplines</h2>
           <p>

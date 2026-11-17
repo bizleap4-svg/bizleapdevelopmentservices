@@ -4,8 +4,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FAQSection, { FAQ } from '@/components/ui/FAQSection';
+import ProjectsWeBuilt from '@/components/services/ProjectsWeBuilt';
 import { SITE_URL, SITE_NAME, BRAND_NAME, SOCIAL_LINKS } from '@/config/site';
-import { ArrowRight, ShoppingCart, CreditCard, ShieldCheck, Zap, Layers, RefreshCw, BarChart3, Truck } from 'lucide-react';
+import { ShoppingCart, CreditCard, ShieldCheck, Zap, Layers, RefreshCw, BarChart3, Truck } from 'lucide-react';
 import styles from '../service-page.module.css';
 
 export const metadata: Metadata = {
@@ -199,33 +200,7 @@ export default function EcommerceWebsiteDevelopmentNagpurPage() {
             <li><strong>Stage 5 — Launch, Indexing &amp; Monitoring:</strong> Production deployment on edge cloud infrastructure, Schema.org product data verification in Google Search Console, and continuous performance tracking.</li>
           </ul>
 
-          <h2>Live E-Commerce Case Studies Built by Bizleap Development</h2>
-          <p>
-            Review successful digital storefronts engineered and launched by our Nagpur team:
-          </p>
-          <div className={styles.gridCards}>
-            <div className={styles.card}>
-              <h4>MIRAYA</h4>
-              <p><strong>Fashion &amp; Apparel Retail:</strong> High-conversion fashion e-commerce storefront with fluid collection showcases and responsive mobile browsing.</p>
-              <Link href="/work/miraya" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View MIRAYA Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>SUKO Corporate Wear</h4>
-              <p><strong>B2B &amp; Apparel Commerce:</strong> Scalable Next.js platform tailored for corporate uniform catalogues and bulk quotation inquiries.</p>
-              <Link href="/work/suko" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View SUKO Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>Taubys</h4>
-              <p><strong>Food &amp; Bakery Delivery:</strong> Visual menu ordering platform with local delivery scheduling, inventory caps, and mobile payment processing.</p>
-              <Link href="/work/taubys" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View Taubys Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
+          <ProjectsWeBuilt serviceHref="/services/ecommerce-website-development-nagpur" />
 
           <h2>Explore Related Engineering Disciplines</h2>
           <p>

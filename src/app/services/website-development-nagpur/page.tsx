@@ -5,8 +5,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FAQSection, { FAQ } from '@/components/ui/FAQSection';
+import ProjectsWeBuilt from '@/components/services/ProjectsWeBuilt';
 import { SITE_URL, SITE_NAME, BRAND_NAME, SOCIAL_LINKS } from '@/config/site';
-import { ArrowRight, CheckCircle2, Code2, Database, Shield, Zap, Layers, Server, Globe } from 'lucide-react';
+import { CheckCircle2, Code2, Database, Shield, Zap, Layers, Server, Globe } from 'lucide-react';
 import styles from '../service-page.module.css';
 
 export const metadata: Metadata = {
@@ -200,33 +201,7 @@ export default function WebsiteDevelopmentNagpurPage() {
             <li><strong>Stage 5 — Production Deployment &amp; Handoff:</strong> Seamless DNS configuration, edge CDN routing, SSL certification, search console registration, and administrative documentation.</li>
           </ul>
 
-          <h2>Selected Web Builds Delivered by Our Nagpur Studio</h2>
-          <p>
-            Explore live production web architectures engineered and deployed by Bizleap Development:
-          </p>
-          <div className={styles.gridCards}>
-            <div className={styles.card}>
-              <h4>ASMA Training Institute</h4>
-              <p><strong>Education &amp; Training:</strong> Modern web portal with modular course listings, faculty credentials, and digital inquiry funnels.</p>
-              <Link href="/work/asma" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View ASMA Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>Chemora Life Science</h4>
-              <p><strong>Chemical Manufacturing:</strong> Clean corporate website showcasing life science solutions, chemical specifications, and international export channels.</p>
-              <Link href="/work/chemora" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View Chemora Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>Wealth Acumen</h4>
-              <p><strong>Financial Services:</strong> High-trust financial advisory portal emphasizing wealth management compliance, transparency, and consultation bookings.</p>
-              <Link href="/work/wealth-acumen" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View Wealth Acumen Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
+          <ProjectsWeBuilt serviceHref="/services/website-development-nagpur" />
 
           <h2>Explore Related Software Engineering Disciplines</h2>
           <p>

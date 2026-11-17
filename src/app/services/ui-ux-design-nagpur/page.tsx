@@ -4,8 +4,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FAQSection, { FAQ } from '@/components/ui/FAQSection';
+import ProjectsWeBuilt from '@/components/services/ProjectsWeBuilt';
 import { SITE_URL, SITE_NAME, BRAND_NAME, SOCIAL_LINKS } from '@/config/site';
-import { ArrowRight, Layout, Palette, MousePointerClick, Layers, CheckCircle2, Eye, Compass, Smartphone } from 'lucide-react';
+import { Layout, Palette, MousePointerClick, Layers, CheckCircle2, Eye, Compass, Smartphone } from 'lucide-react';
 import styles from '../service-page.module.css';
 
 export const metadata: Metadata = {
@@ -199,33 +200,7 @@ export default function UiUxDesignNagpurPage() {
             <li><strong>Stage 5 — Developer Handoff &amp; Design QA:</strong> Providing inspectable Figma files, exporting optimized SVG assets, and reviewing engineering builds to guarantee 1:1 fidelity with designs.</li>
           </ul>
 
-          <h2>Selected UI/UX Design Case Studies by Bizleap Development</h2>
-          <p>
-            Explore real design systems and digital interfaces created by our Nagpur studio:
-          </p>
-          <div className={styles.gridCards}>
-            <div className={styles.card}>
-              <h4>Art Interiorz</h4>
-              <p><strong>Interior Architecture:</strong> Visually driven portfolio gallery showcasing luxury residential and commercial transformations with generous whitespace and high-res imagery.</p>
-              <Link href="/work/art-interiorz" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View Art Interiorz Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>MYSA</h4>
-              <p><strong>Haute Couture &amp; Luxury Fashion:</strong> Premium digital brand presence reflecting haute couture aesthetics, bespoke typography pairings, and micro-animated gestures.</p>
-              <Link href="/work/mysa" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View MYSA Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-            <div className={styles.card}>
-              <h4>Oswal Jewellers</h4>
-              <p><strong>Luxury Store &amp; Jewellery Commerce:</strong> Opulent fine jewellery browsing experience with custom quote requests, store visit scheduling, and mobile-first catalogue filtering.</p>
-              <Link href="/work/oswal-jewellers" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#111', fontWeight: 600, marginTop: '0.75rem', textDecoration: 'underline' }}>
-                View Oswal Jewellers Case Study <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
+          <ProjectsWeBuilt serviceHref="/services/ui-ux-design-nagpur" />
 
           <h2>Explore Related Engineering Disciplines</h2>
           <p>
