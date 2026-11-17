@@ -1,16 +1,26 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { PORTFOLIO_PROJECTS } from '@/data/portfolio';
+import { PORTFOLIO_PROJECTS, PortfolioProject } from '@/data/portfolio';
 import styles from '@/app/services/service-page.module.css';
 
 interface ProjectsWeBuiltProps {
-  serviceHref: string;
+  serviceHref?: string;
+  slugs?: string[];
 }
 
-export default function ProjectsWeBuilt({ serviceHref }: ProjectsWeBuiltProps) {
-  const mappedProjects = PORTFOLIO_PROJECTS.filter(
-    (p) => p.primaryService?.href === serviceHref
-  ).slice(0, 6);
+export default function ProjectsWeBuilt({ serviceHref, slugs }: ProjectsWeBuiltProps) {
+  let mappedProjects: PortfolioProject[] = [];
+
+  if (slugs && slugs.length > 0) {
+    mappedProjects = slugs
+      .map((slug) => PORTFOLIO_PROJECTS.find((p) => p.slug === slug))
+      .filter((p): p is PortfolioProject => Boolean(p))
+      .slice(0, 6);
+  } else if (serviceHref) {
+    mappedProjects = PORTFOLIO_PROJECTS.filter(
+      (p) => p.primaryService?.href === serviceHref
+    ).slice(0, 6);
+  }
 
   if (mappedProjects.length === 0) {
     return null;

@@ -200,7 +200,7 @@ export default function NextJsDevelopmentPage() {
             <li><strong>Stage 5 — Production Cloud Deployment:</strong> Configuring custom domain DNS, SSL certificates, edge cache revalidation hooks, and error tracking via Sentry.</li>
           </ul>
 
-          <ProjectsWeBuilt serviceHref="/services/nextjs-development" />
+          <ProjectsWeBuilt slugs={['miraya', 'chemora', 'genekon']} />
 
           <h2>Explore Related Engineering Disciplines</h2>
           <p>
