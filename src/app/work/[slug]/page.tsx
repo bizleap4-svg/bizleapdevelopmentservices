@@ -31,7 +31,7 @@ export function getCaseStudyTitle(project: PortfolioProject): string {
     case 'asma':
       return 'ASMA | Website Development for Education | BizDevelopment';
     case 'binous':
-      return 'BINOUS | Embedded Systems and Robotics | BizDevelopment';
+      return 'BINOUS | Next.js Website for Fitness Gym | BizDevelopment';
     case 'shutter-school':
       return 'Shutter School | EdTech Platform for Media | BizDevelopment';
     case 'chemora':
@@ -76,7 +76,7 @@ export function getCaseStudyDescription(project: PortfolioProject): string {
     case 'asma':
       return 'Case study for ASMA (Professional Education). Educational website with course curriculum pages, gallery, and student inquiry funnels by BizDevelopment.';
     case 'binous':
-      return 'Case study for BINOUS (Robotics and Technology Education). Embedded systems and hardware lab web platform with dynamic course catalogs by BizDevelopment.';
+      return 'Case study for BINOUS (Fitness, Training and Nutrition). High-energy fitness web platform with Stripe payment integration engineered by BizDevelopment.';
     case 'shutter-school':
       return 'Case study for Shutter School (Creative Education and Media Arts). Ed-tech learning portal with video streaming integration engineered by BizDevelopment.';
     case 'chemora':
